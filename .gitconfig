@@ -1,5 +1,5 @@
 [user]
-	email = david@ddean.dev
-	name = David Dean
+  email = david@ddean.dev
+  name = David Dean
 [init]
-	defaultBranch = main
+  defaultBranch = main
