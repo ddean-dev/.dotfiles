@@ -1,10 +1,11 @@
 #keybindings
+bindkey -e
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
 #aliases
-alias ls='exa --icons'
-alias dir='exa --long --header --git --time-style=iso --icons -a'
+alias ls='eza --icons -a'
+alias dir='eza --long --header --git --time-style=iso --icons -a'
 alias vim='nvim'
 alias vi='nvim'
 
