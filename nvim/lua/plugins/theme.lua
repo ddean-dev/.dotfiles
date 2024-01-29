@@ -4,7 +4,7 @@ return {
     lazy = true,
     opts = { style = "moon", transparent = true },
     init = function()
-        vim.cmd[[colorscheme tokyonight]]
+      vim.cmd[[colorscheme tokyonight]]
     end,
   },
 }

@@ -3,9 +3,7 @@ return {
   "nvim-treesitter/nvim-treesitter-context", 
   {
     "williamboman/mason.nvim",
-    init = function()
-      require("mason").setup()
-    end,
+    config = function() require("mason").setup() end,
   },
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",

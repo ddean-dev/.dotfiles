@@ -8,9 +8,7 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    init = function ()
-      require('lualine').setup() 
-    end,
+    config = function () require('lualine').setup() end,
   },
   {
     "folke/which-key.nvim",
@@ -23,20 +21,8 @@ return {
       plugins = {spelling = true},
       defaults = {
         mode = { "n", "v" },
-        ["<leader>q"] = { name = "+quit" },
+        ["<leader>q"] = { name = "Quit" },
         ["<leader>w"] = { name = "+windows" },
---        ["g"] = { name = "+goto" },
---        ["gs"] = { name = "+surround" },
---        ["]"] = { name = "+next" },
---        ["["] = { name = "+prev" },
---        ["<leader><tab>"] = { name = "+tabs" },
---        ["<leader>b"] = { name = "+buffer" },
---        ["<leader>c"] = { name = "+code" },
---        ["<leader>g"] = { name = "+git" },
---        ["<leader>gh"] = { name = "+hunks" },
---        ["<leader>s"] = { name = "+search" },
---        ["<leader>u"] = { name = "+ui" },
---        ["<leader>x"] = { name = "+diagnostics/quickfix"},
       },
     },
     config = function(_, opts)
