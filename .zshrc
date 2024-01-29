@@ -8,6 +8,9 @@ alias dir='exa --long --header --git --time-style=iso --icons -a'
 alias vim='nvim'
 alias vi='nvim'
 
+#homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 #environment
 export GOPATH=$HOME/.go/
 export PNPM_HOME="/home/nibrodooh/.local/share/pnpm"
@@ -26,5 +29,3 @@ export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 eval "$(starship init zsh)"
 
-#homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
