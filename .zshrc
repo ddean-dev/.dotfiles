@@ -6,6 +6,9 @@ bindkey "^[[1;5C" forward-word
 #aliases
 alias ls='eza --icons -a'
 alias dir='eza --long --header --git --time-style=iso --icons -a'
+function lk {
+  cd "$(walk --icons "$@")"
+}
 alias vim='nvim'
 alias vi='nvim'
 
@@ -13,12 +16,7 @@ alias vi='nvim'
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 #environment
-export GOPATH=$HOME/.go/
-export PNPM_HOME="/home/nibrodooh/.local/share/pnpm"
-export DENO_INSTALL="$HOME/.deno"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$PATH:$GOPATH/bin:$PNPM_HOME:$DENO_INSTALL/bin:$BUN_INSTALL/bin"
-[ -s "$HOME/.bun/_bun" ] && source "/home/nibrodooh/.bun/_bun"
+export EDITOR=nvim
 
 #zsh settings
 HISTFILE=~/.histfile
