@@ -3,12 +3,19 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {},
-    dependencies = {"MunifTanjim/nui.nvim", "rcarriga/nvim-notify"},
+    dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+  },
+  {
+    "rcarriga/nvim-notify",
+    dependencies = { 'nvim-telescope/telescope.nvim' },
+    keys = {
+      { "<leader>N", "<cmd>Telescope notify<cr>", desc = "Notifications" },
+    }
   },
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function () require('lualine').setup() end,
+    config = function() require('lualine').setup() end,
   },
   {
     "folke/which-key.nvim",
@@ -18,7 +25,7 @@ return {
       vim.o.timeoutlen = 300
     end,
     opts = {
-      plugins = {spelling = true},
+      plugins = { spelling = true },
       defaults = {
         mode = { "n", "v" },
         ["<leader>q"] = { name = "Quit" },
