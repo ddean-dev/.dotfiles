@@ -4,13 +4,14 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
 #aliases
-alias ls='eza --icons -a'
-alias dir='eza --long --header --git --time-style=iso --icons -a'
+alias ls='eza --icons'
+alias dir='eza --long --header --git --time-style=iso --icons'
 function lk {
   cd "$(walk --icons "$@")"
 }
 alias vim='nvim'
 alias vi='nvim'
+alias reload='source $HOME/.zshrc'
 
 #homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -28,3 +29,6 @@ export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 eval "$(starship init zsh)"
 
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux new-session -A -s main 
+fi
