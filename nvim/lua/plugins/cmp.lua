@@ -25,7 +25,7 @@ return {
           ["<S-CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
-          }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          }),
           ["<C-CR>"] = function(fallback)
             cmp.abort()
             fallback()
@@ -37,11 +37,11 @@ return {
         }, {
           { name = "buffer" },
         }),
-        --experimental = {
-        --  ghost_text = {
-        --    hl_group = "CmpGhostText",
-        --  },
-        --},
+        experimental = {
+          ghost_text = {
+            hl_group = "CmpGhostText",
+          },
+        },
         sorting = defaults.sorting,
       }
     end,
