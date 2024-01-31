@@ -10,7 +10,7 @@ function lk { cd "$(walk --icons "$@")" }
 alias vim='nvim'
 alias vi='nvim'
 alias lg='lazygit'
-alias reload='source $HOME/.zshrc'
+alias reload='source $HOME/.zshrc; tmux source $HOME/.tmux.conf'
 
 # Environment
 export EDITOR=nvim
@@ -22,8 +22,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 # Completion Settings
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=** l:|=*'
