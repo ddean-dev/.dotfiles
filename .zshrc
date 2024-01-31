@@ -13,6 +13,7 @@ alias reload='source $HOME/.zshrc'
 
 # Environment
 export EDITOR=nvim
+export MANPAGER='nvim +Man!'
 
 # ZSH settings
 HISTFILE=~/.histfile
