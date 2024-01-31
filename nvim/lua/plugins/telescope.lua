@@ -4,7 +4,7 @@ return {
     tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
-      { "<leader><space>", "<cmd>Telescope find_files<cr>", "Find File" },
+      { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find File" },
       { "<leader>/",       "<cmd>Telescope live_grep<cr>",  desc = "Live Grep" },
       { "<leader>b",       "<cmd>Telescope buffers<cr>",    desc = "Buffers" },
     },
@@ -56,8 +56,8 @@ return {
       require('neoclip').setup()
     end,
     keys = {
-      { "<leader>p",  "<cmd>Telescope neoclip<cr>",    desc = "Clipboard" },
-      { "<leader>qa", "<cmd>Telescope macroscope<cr>", desc = "Macro History" }
+      { "<leader>p", "<cmd>Telescope neoclip<cr>",    desc = "Clipboard" },
+      { "<leader>q", "<cmd>Telescope macroscope<cr>", desc = "Macro History" }
     }
   }
 }
