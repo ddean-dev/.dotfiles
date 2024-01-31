@@ -9,6 +9,7 @@ alias dir='eza --long --header --git --time-style=iso --icons'
 function lk { cd "$(walk --icons "$@")" }
 alias vim='nvim'
 alias vi='nvim'
+alias lg='lazygit'
 alias reload='source $HOME/.zshrc'
 
 # Environment
