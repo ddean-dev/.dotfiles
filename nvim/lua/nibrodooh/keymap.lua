@@ -4,3 +4,5 @@ vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and 
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("n", "<C-Right>", "w")
+vim.keymap.set("n", "<C-Left>", "b")
