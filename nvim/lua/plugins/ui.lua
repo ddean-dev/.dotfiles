@@ -3,15 +3,26 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {},
-    dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+    dependencies = { "MunifTanjim/nui.nvim" },
   },
   {
-    "rcarriga/nvim-notify",
-    dependencies = { 'nvim-telescope/telescope.nvim' },
-    keys = {
-      { "<leader>N", "<cmd>Telescope notify<cr>", desc = "Notifications" },
-    }
+    "vigoux/notifier.nvim",
+    config = function()
+      require('notifier').setup({
+        notify = {
+          clear_time = 5000,         -- Time in milliseconds before removing a vim.notify notification, 0 to make them sticky
+          min_level = vim.log.levels.INFO, -- Minimum log level to print the notification
+        },
+      })
+    end,
   },
+  --  {
+  --    "rcarriga/nvim-notify",
+  --    dependencies = { 'nvim-telescope/telescope.nvim' },
+  --    keys = {
+  --      { "<leader>n", "<cmd>Telescope notify<cr>", desc = "Notifications" },
+  --    }
+  --  },
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
