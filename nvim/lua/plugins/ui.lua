@@ -10,23 +10,11 @@ return {
     config = function()
       require('notifier').setup({
         notify = {
-          clear_time = 5000,         -- Time in milliseconds before removing a vim.notify notification, 0 to make them sticky
+          clear_time = 5000,               -- Time in milliseconds before removing a vim.notify notification, 0 to make them sticky
           min_level = vim.log.levels.INFO, -- Minimum log level to print the notification
         },
       })
     end,
-  },
-  --  {
-  --    "rcarriga/nvim-notify",
-  --    dependencies = { 'nvim-telescope/telescope.nvim' },
-  --    keys = {
-  --      { "<leader>n", "<cmd>Telescope notify<cr>", desc = "Notifications" },
-  --    }
-  --  },
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function() require('lualine').setup() end,
   },
   {
     "folke/which-key.nvim",
@@ -39,7 +27,6 @@ return {
       plugins = { spelling = true },
       defaults = {
         mode = { "n", "v" },
-        ["<leader>q"] = { name = "Quit" },
         ["<leader>w"] = { name = "+windows" },
       },
     },
