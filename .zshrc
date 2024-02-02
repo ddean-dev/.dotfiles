@@ -10,7 +10,7 @@ function lk { cd "$(walk --icons "$@")" }
 alias vim='nvim'
 alias vi='nvim'
 alias lg='lazygit'
-alias reload='source $HOME/.zshrc; tmux source $HOME/.tmux.conf'
+alias reload='source $HOME/.zshrc'
 
 # Environment
 export EDITOR=nvim
@@ -35,5 +35,5 @@ eval "$(starship init zsh)"
 
 # Start tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux new-session -A -s main 
+  exec tmux new-session -A -s LOCAL
 fi
