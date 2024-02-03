@@ -1,8 +1,30 @@
 return {
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-  --"nvim-treesitter/nvim-treesitter-context",
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ui = {
+        border = "single"
+      },
+    },
+    config = function(_, opts) require("mason").setup(opts) end,
+  },
+  {
+    "folke/neodev.nvim",
+    config = function()
+      require("neodev").setup({
+        override = function(root_dir, library)
+          if root_dir:find("/.dotfiles", 1, true) == 1 then
+            library.enabled = true
+            library.plugins = true
+          end
+        end,
+      })
+    end,
+  },
   {
     "neovim/nvim-lspconfig",
+    dependencies = { "folke/neodev.nvim" },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function()
@@ -15,10 +37,6 @@ return {
     end
   },
   {
-    "williamboman/mason.nvim",
-    config = function() require("mason").setup() end,
-  },
-  {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       local lsp = require("mason-lspconfig")
@@ -29,16 +47,5 @@ return {
         end,
       }
     end,
-  },
-  {
-    "folke/neodev.nvim",
-    opts = {
-      override = function(root_dir, library)
-        if root_dir:find(".dotfiles", 1, false) >= 1 then
-          library.enabled = true
-          library.plugins = true
-        end
-      end,
-    },
   },
 }

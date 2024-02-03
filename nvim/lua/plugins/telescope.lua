@@ -7,6 +7,7 @@ return {
       { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find File" },
       { "<leader>/",       "<cmd>Telescope live_grep<cr>",  desc = "Live Grep" },
       { "<leader>b",       "<cmd>Telescope buffers<cr>",    desc = "Buffers" },
+      { "<leader>h",       "<cmd>Telescope help_tags<cr>",  desc = "Help Search" },
     },
     opts = {
       pickers = {
@@ -15,15 +16,6 @@ return {
         }
       }
     },
-    init = function()
-      vim.api.nvim_create_autocmd("VimEnter", {
-        callback = function()
-          if vim.fn.argv(0) == "" then
-            require("telescope.builtin").find_files()
-          end
-        end,
-      })
-    end,
   },
   {
     "nvim-telescope/telescope-file-browser.nvim",
@@ -47,17 +39,4 @@ return {
       require("telescope").load_extension("undo")
     end,
   },
-  {
-    "AckslD/nvim-neoclip.lua",
-    requires = {
-      { 'nvim-telescope/telescope.nvim' },
-    },
-    config = function()
-      require('neoclip').setup()
-    end,
-    keys = {
-      { "<leader>p", "<cmd>Telescope neoclip<cr>",    desc = "Clipboard" },
-      { "<leader>q", "<cmd>Telescope macroscope<cr>", desc = "Macro History" }
-    }
-  }
 }
