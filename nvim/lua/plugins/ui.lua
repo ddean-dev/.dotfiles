@@ -1,4 +1,4 @@
-local colors = {
+local c = {
   black     = 0,
   red       = 1,
   green     = 2,
@@ -12,10 +12,10 @@ local colors = {
 }
 
 if vim.o.background == "light" then
-  colors.black = 15
-  colors.white = 0
-  colors.lightgray = 8
-  colors.darkgray = 7
+  c.black = 15
+  c.white = 0
+  c.lightgray = 8
+  c.darkgray = 7
 end
 
 return {
@@ -60,7 +60,8 @@ return {
       plugins = { spelling = true },
       defaults = {
         mode = { "n", "v" },
-        ["<leader>w"] = { name = "+windows" },
+        ["<leader>c"] = { name = "+code" },
+        ["<leader>g"] = { name = "+git" },
       },
     },
     config = function(_, opts)
@@ -94,34 +95,34 @@ return {
         section_separators = { left = '', right = '' },
         theme = {
           normal = {
-            a = { bg = colors.blue, fg = colors.black, gui = 'bold' },
-            b = { bg = colors.darkgray, fg = colors.white },
-            c = { bg = colors.black, fg = colors.white }
+            a = { bg = c.blue, fg = c.black, gui = 'bold' },
+            b = { bg = c.darkgray, fg = c.white },
+            c = { bg = c.black, fg = c.white }
           },
           insert = {
-            a = { bg = colors.cyan, fg = colors.black, gui = 'bold' },
-            b = { bg = colors.darkgray, fg = colors.white },
-            c = { bg = colors.black, fg = colors.white }
+            a = { bg = c.cyan, fg = c.black, gui = 'bold' },
+            b = { bg = c.darkgray, fg = c.white },
+            c = { bg = c.black, fg = c.white }
           },
           visual = {
-            a = { bg = colors.green, fg = colors.black, gui = 'bold' },
-            b = { bg = colors.darkgray, fg = colors.white },
-            c = { bg = colors.black, fg = colors.white }
+            a = { bg = c.green, fg = c.black, gui = 'bold' },
+            b = { bg = c.darkgray, fg = c.white },
+            c = { bg = c.black, fg = c.white }
           },
           replace = {
-            a = { bg = colors.red, fg = colors.black, gui = 'bold' },
-            b = { bg = colors.darkgray, fg = colors.white },
-            c = { bg = colors.black, fg = colors.white }
+            a = { bg = c.red, fg = c.black, gui = 'bold' },
+            b = { bg = c.darkgray, fg = c.white },
+            c = { bg = c.black, fg = c.white }
           },
           command = {
-            a = { bg = colors.yellow, fg = colors.black, gui = 'bold' },
-            b = { bg = colors.darkgray, fg = colors.white },
-            c = { bg = colors.black, fg = colors.white }
+            a = { bg = c.yellow, fg = c.black, gui = 'bold' },
+            b = { bg = c.darkgray, fg = c.white },
+            c = { bg = c.black, fg = c.white }
           },
           inactive = {
-            a = { bg = colors.lightgray, fg = colors.black, gui = 'bold' },
-            b = { bg = colors.darkgray, fg = colors.white },
-            c = { bg = colors.black, fg = colors.white }
+            a = { bg = c.lightgray, fg = c.black, gui = 'bold' },
+            b = { bg = c.darkgray, fg = c.white },
+            c = { bg = c.black, fg = c.white }
           }
         },
       },
