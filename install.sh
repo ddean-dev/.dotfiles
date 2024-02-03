@@ -30,5 +30,5 @@ if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
 fi
 
 #echo "Add below key to GitHub"
-#cat ~/.ssh/id_ed25519.pub
+cat ~/.ssh/id_ed25519.pub
 #echo "Add above key to GitHub"
