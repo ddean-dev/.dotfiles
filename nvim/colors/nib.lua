@@ -1,5 +1,7 @@
 -- Nibrodooh's Improved but Basic
 
+vim.opt.termguicolors = false
+
 if vim.g.colors_name then
   vim.cmd("hi clear")
 end

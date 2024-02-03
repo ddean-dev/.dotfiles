@@ -35,7 +35,6 @@ vim.opt.splitbelow = true                     -- Put new windows below current
 vim.opt.splitkeep = "screen"                  -- Keep scroll when spliting
 vim.opt.splitright = true                     -- Put new windows right of current
 vim.opt.tabstop = 2                           -- Number of spaces tabs count for
-vim.opt.termguicolors = false                 -- Don't use truecolour to allow terminal theming
 vim.opt.timeoutlen = 300                      -- Lower timeout to feel more responsive
 vim.opt.undofile = true                       -- Maintain undo history between sessions
 vim.opt.undolevels = 10000                    -- How many undo's to keep
