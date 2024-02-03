@@ -27,7 +27,7 @@ vim.opt.shortmess:append(
 )
 vim.opt.showmode = false                      -- Dont show mode since we have a statusline
 vim.opt.sidescrolloff = 8                     -- Columns of context
-vim.opt.signcolumn = "no"                     -- Always show the signcolumn
+vim.opt.signcolumn = "yes"                    -- Always show the signcolumn
 vim.opt.smartcase = true                      -- Don't ignore case with capitals
 vim.opt.smartindent = true                    -- Insert indents automatically
 vim.opt.spelllang = { "en_ca", "en" }         -- Set spelling to canadian
@@ -44,7 +44,7 @@ vim.opt.virtualedit = "block"                 -- Allow cursor to move where ther
 vim.opt.wildmode = "longest:full,full"        -- Command-line completion mode
 vim.opt.winminwidth = 5                       -- Minimum window width
 vim.opt.wrap = false                          -- Disable line wrap
-vim.opt.foldcolumn = '0'                      -- only show a single colomn of folding
+vim.opt.foldcolumn = '0'                      -- don't show fold column
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
