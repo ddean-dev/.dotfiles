@@ -1,3 +1,5 @@
+-- Nibrodooh's Improved but Basic
+
 if vim.g.colors_name then
   vim.cmd("hi clear")
 end
@@ -23,77 +25,124 @@ local c = {
   white         = 15,
 }
 
-local theme = {
-  SpecialKey   = { ctermfg = c.blue },
-  TermCursor   = { cterm = { reverse = true } },
-  NonText      = { ctermfg = c.brightblue },
-  Directory    = { ctermfg = c.blue },
-  ErrorMsg     = { ctermfg = c.white, ctermbg = c.red },
-  IncSearch    = { cterm = { reverse = true } },
-  MoreMsg      = { ctermfg = c.green },
-  ModeMsg      = { cterm = { bold = true } },
-  Question     = { ctermfg = c.green },
-  Title        = { ctermfg = c.magenta },
-  WarningMsg   = { ctermfg = c.red },
-  WildMenu     = { ctermfg = c.black, ctermbg = c.brightyellow },
-  Conceal      = { ctermfg = c.lightgray, ctermbg = c.lightgray },
-  SpellBad     = { ctermbg = c.brightred },
-  SpellRare    = { ctermbg = c.brightmagenta },
-  SpellLocal   = { ctermbg = c.brightcyan },
-  PmenuSbar    = { ctermbg = c.darkgray },
-  PmenuThumb   = { ctermbg = c.black },
-  TabLine      = { cterm = { underline = true }, ctermfg = c.black, ctermbg = c.lightgray },
-  TabLineSel   = { cterm = { bold = true } },
-  TabLineFill  = { cterm = { reverse = true } },
-  CursorColumn = { ctermbg = c.lightgray },
-  CursorLine   = { cterm = { underline = true } },
-  MatchParen   = { ctermbg = c.brightcyan },
-  Constant     = { ctermfg = c.red },
-  Special      = { ctermfg = c.magenta },
-  Identifier   = { cterm = {}, ctermfg = c.cyan },
-  Statement    = { ctermfg = c.yellow },
-  PreProc      = { ctermfg = c.magenta },
-  Type         = { ctermfg = c.green },
-  Underlined   = { cterm = { underline = true }, ctermfg = c.magenta },
-  Ignore       = { ctermfg = c.white },
-  Error        = { ctermfg = c.white, ctermbg = c.brightred },
-  Todo         = { ctermfg = c.black, ctermbg = c.brightyellow },
-  DiffAdd      = { ctermfg = c.black, ctermbg = c.green },
-  DiffChange   = { ctermfg = c.black, ctermbg = c.yellow },
-  DiffDelete   = { ctermfg = c.black, ctermbg = c.red },
-  DiffText     = { ctermfg = c.black, ctermbg = c.brightyellow, cterm = { bold = true } },
-  Visual       = { ctermfg = "NONE", ctermbg = "NONE", cterm = { reverse = true } },
-  Search       = { ctermfg = c.black, ctermbg = c.brightyellow },
-  SignColumn   = { ctermbg = "NONE" },
-}
-
+-- Invert greyscale for light background
 if vim.o.background == "light" then
-  theme.LineNr       = { ctermfg = c.lightgray }
-  theme.CursorLineNr = { ctermfg = c.darkgray }
-  theme.Comment      = { ctermfg = c.lightgray }
-  theme.ColorColumn  = { ctermfg = c.darkgray, ctermbg = c.lightgray }
-  theme.Folded       = { ctermfg = c.darkgray, ctermbg = c.lightgray }
-  theme.FoldColumn   = { ctermfg = c.darkgray, ctermbg = c.lightgray }
-  theme.Pmenu        = { ctermfg = c.black, ctermbg = c.lightgray }
-  theme.PmenuSel     = { ctermfg = c.lightgray, ctermbg = c.black }
-  theme.SpellCap     = { ctermfg = c.darkgray, ctermbg = c.lightgray }
-  theme.StatusLine   = { ctermfg = c.black, ctermbg = c.lightgray, cterm = { bold = true } }
-  theme.StatusLineNC = { ctermfg = c.darkgray, ctermbg = c.lightgray, cterm = {} }
-  theme.VertSplit    = { ctermfg = c.darkgray, ctermbg = c.lightgray, cterm = {} }
-else
-  theme.LineNr       = { ctermfg = c.darkgray }
-  theme.CursorLineNr = { ctermfg = c.lightgray }
-  theme.Comment      = { ctermfg = c.darkgray }
-  theme.ColorColumn  = { ctermfg = c.lightgray, ctermbg = c.darkgray }
-  theme.Folded       = { ctermfg = c.lightgray, ctermbg = c.darkgray }
-  theme.FoldColumn   = { ctermfg = c.lightgray, ctermbg = c.darkgray }
-  theme.Pmenu        = { ctermfg = c.white, ctermbg = c.ddarkgray }
-  theme.PmenuSel     = { ctermfg = c.darkgray, ctermbg = c.white }
-  theme.SpellCap     = { ctermfg = c.lightgray, ctermbg = c.darkgray }
-  theme.StatusLine   = { ctermfg = c.white, ctermbg = c.ddarkgray, cterm = { bold = true } }
-  theme.StatusLineNC = { ctermfg = c.lightgray, ctermbg = c.darkgray, cterm = {} }
-  theme.VertSplit    = { ctermfg = c.lightgray, ctermbg = c.darkgray, cterm = {} }
+  c.black = 15
+  c.white = 0
+  c.lightgray = 8
+  c.darkgray = 7
 end
+
+local theme = {
+  -- Cursor
+  TermCursor        = { cterm = { reverse = true } },
+  CursorColumn      = { ctermbg = c.lightgray },
+  ColorColumn       = { ctermfg = c.lightgray, ctermbg = c.darkgray },
+  CursorLine        = { cterm = { underline = true } },
+
+  -- UI
+  WinSeparator      = { ctermfg = c.lightgray, ctermbg = c.darkgray },
+
+  -- Gutter
+  LineNr            = { ctermfg = c.darkgray },
+  CursorLineNr      = { ctermfg = c.lightgray },
+  SignColumn        = { ctermbg = "NONE" },
+  FoldColumn        = { ctermfg = c.lightgray, ctermbg = "NONE" },
+
+  -- Search and Selection
+  IncSearch         = { cterm = { reverse = true } },
+  Visual            = { ctermfg = "NONE", ctermbg = "NONE", cterm = { reverse = true } },
+  Search            = { ctermfg = c.black, ctermbg = c.brightyellow },
+  MatchParen        = { ctermbg = c.brightgreen },
+  Folded            = { ctermfg = c.lightgray, ctermbg = c.darkgray },
+
+  -- Satus Bar
+  ModeMsg           = { cterm = { bold = true } },
+  StatusLine        = { ctermfg = c.white, ctermbg = c.ddarkgray, cterm = { bold = true } },
+  StatusLineNC      = { ctermfg = c.lightgray, ctermbg = c.darkgray },
+  TabLine           = { cterm = { underline = true }, ctermfg = c.black, ctermbg = c.lightgray },
+  TabLineSel        = { cterm = { bold = true } },
+  TabLineFill       = { cterm = { reverse = true } },
+
+  -- Popup Menu
+  PmenuSbar         = { ctermbg = c.darkgray },
+  PmenuThumb        = { ctermbg = c.black },
+  Pmenu             = { ctermfg = c.white, ctermbg = c.ddarkgray },
+  PmenuSel          = { ctermfg = c.darkgray, ctermbg = c.white },
+
+  -- Special Characters
+  SpecialKey        = { ctermfg = c.brightred },
+  NonText           = { ctermfg = c.brightblue },
+  Conceal           = { ctermfg = c.lightgray, ctermbg = c.lightgray },
+
+  -- Prompts
+  Directory         = { ctermfg = c.blue },
+  Question          = { ctermfg = c.green },
+  Title             = { ctermfg = c.magenta },
+  MoreMsg           = { ctermfg = c.green },
+  WarningMsg        = { ctermfg = c.white, ctermbg = c.brightyellow },
+  ErrorMsg          = { ctermfg = c.white, ctermbg = c.brightred },
+  WildMenu          = { ctermfg = c.black, ctermbg = c.brightblue },
+
+  -- Spelling
+  SpellBad          = { ctermbg = c.brightred },
+  SpellRare         = { ctermbg = c.brightmagenta },
+  SpellLocal        = { ctermbg = c.brightcyan },
+  SpellCap          = { ctermfg = c.brightyellow },
+
+  -- VCS
+  DiffAdd           = { ctermfg = c.black, ctermbg = c.green },
+  DiffChange        = { ctermfg = c.black, ctermbg = c.yellow },
+  DiffDelete        = { ctermfg = c.black, ctermbg = c.red },
+  DiffText          = { ctermfg = c.black, ctermbg = c.brightyellow, cterm = { bold = true } },
+
+  --LSP
+  Comment           = { ctermfg = c.lightgray },
+  Constant          = { ctermfg = c.yellow },
+  Identifier        = { ctermfg = c.white },
+  Function          = { ctermfg = c.blue },
+  Statement         = { ctermfg = c.cyan },
+  PreProc           = { ctermfg = c.red },
+  Type              = { ctermfg = c.green },
+  Special           = { ctermfg = c.brightmagenta },
+  Underlined        = { cterm = { underline = true }, ctermfg = c.brightcyan },
+  Ignore            = { ctermfg = c.darkgray },
+  Error             = { ctermfg = c.white, ctermbg = c.brightred },
+  Todo              = { cterm = { underline = true }, ctermfg = c.black, ctermbg = c.brightyellow },
+
+  --Rainbow
+  RainbowRed        = { ctermfg = c.red },
+  RainbowYellow     = { ctermfg = c.yellow },
+  RainbowBlue       = { ctermfg = c.blue },
+  RainbowMagenta    = { ctermfg = c.magenta },
+  RainbowGreen      = { ctermfg = c.green },
+  RainbowCyan       = { ctermfg = c.cyan },
+
+  --Noice()
+  NoiceCursor       = { cterm = { reverse = true } },
+
+  -- Notify(https://github.com/rcarriga/nvim-notify)
+  NotifyERRORTitle  = { ctermfg = c.red },
+  NotifyWARNTitle   = { ctermfg = c.yellow },
+  NotifyINFOTitle   = { ctermfg = c.white },
+  NotifyDEBUGTitle  = { ctermfg = c.blue },
+  NotifyTRACETitle  = { ctermfg = c.cyan },
+  NotifyERRORIcon   = { ctermfg = c.red },
+  NotifyWARNIcon    = { ctermfg = c.yellow },
+  NotifyINFOIcon    = { ctermfg = c.white },
+  NotifyDEBUGIcon   = { ctermfg = c.blue },
+  NotifyTRACEIcon   = { ctermfg = c.cyan },
+  NotifyERRORBorder = { ctermfg = c.red },
+  NotifyWARNBorder  = { ctermfg = c.yellow },
+  NotifyINFOBorder  = { ctermfg = c.white },
+  NotifyDEBUGBorder = { ctermfg = c.blue },
+  NotifyTRACEBorder = { ctermfg = c.cyan },
+  NotifyERRORBody   = { link = "Normal" },
+  NotifyWARNBody    = { link = "Normal" },
+  NotifyINFOBody    = { link = "Normal" },
+  NotifyDEBUGBody   = { link = "Normal" },
+  NotifyTRACEBody   = { link = "Normal" },
+}
 
 for group, colors in pairs(theme) do
   vim.api.nvim_set_hl(0, group, colors)
