@@ -25,18 +25,11 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = { "folke/neodev.nvim" },
-    config = function()
-      vim.api.nvim_create_autocmd('LspAttach', {
-        callback = function()
-          vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Hover" })
-          --vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = "Go to Declaration" })
-          --vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to Definition" })
-          --vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = "Go to Implementation" })
-          vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = "Rename" })
-          vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "Code Action" })
-        end
-      })
-    end
+    keys = {
+      { '<leader>ca', vim.lsp.buf.code_action, desc = "Code Action" },
+      { '<leader>cr', vim.lsp.buf.rename,      desc = "Rename" },
+      { 'K',          vim.lsp.buf.hover,       desc = "Hover" }
+    },
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -49,5 +42,13 @@ return {
         end,
       }
     end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    requires = { "nvim-treesitter/nvim-treesitter" },
+    opts = {},
+    config = function(_, opts)
+      require('nvim-treesitter.configs').setup(opts)
+    end
   },
 }

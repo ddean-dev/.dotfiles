@@ -10,6 +10,7 @@ return {
       { "<leader>/",       "<cmd>Telescope live_grep<cr>",          desc = "Live Grep" },
       { "<leader>b",       "<cmd>Telescope buffers<cr>",            desc = "Buffers" },
       { "<leader>h",       "<cmd>Telescope help_tags<cr>",          desc = "Help Search" },
+      { "<leader>d",       "<cmd>Telescope diagnostics<cr>",        desc = "Diagnostics" },
       { "<leader>gh",      "<cmd>Telescope git_bcommits<cr>",       desc = "History" },
       { "<leader>gc",      "<cmd>Telescope git_commits<cr>",        desc = "Commits" },
       { "<leader>gb",      "<cmd>Telescope git_branches<cr>",       desc = "Branches" },
