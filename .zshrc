@@ -6,9 +6,7 @@ bindkey "^[[1;5C" forward-word
 # Aliases
 alias ls='eza --icons'
 alias dir='eza --long --header --git --time-style=iso --icons'
-function lk { cd "$(walk --icons "$@")" }
 alias vim='nvim'
-alias vi='nvim'
 alias lg='lazygit'
 alias reload='source $HOME/.zshrc'
 
