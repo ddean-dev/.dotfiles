@@ -111,6 +111,7 @@ local theme = {
   RainbowMagenta    = { ctermfg = c.magenta },
   RainbowGreen      = { ctermfg = c.green },
   RainbowCyan       = { ctermfg = c.cyan },
+  RainbowDarkGray   = { ctermfg = c.darkgray },
 
   --Noice()
   NoiceCursor       = { cterm = { reverse = true } },

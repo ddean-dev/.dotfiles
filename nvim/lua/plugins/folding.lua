@@ -5,12 +5,7 @@ return {
       require("ibl").setup({
         indent = {
           highlight = {
-            "RainbowBlue",
-            "RainbowCyan",
-            "RainbowGreen",
-            "RainbowYellow",
-            "RainbowRed",
-            "RainbowMagenta",
+            "RainbowDarkGray",
           },
         },
       })
