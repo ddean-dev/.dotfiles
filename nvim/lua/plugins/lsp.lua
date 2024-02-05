@@ -1,5 +1,14 @@
 return {
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      ---@diagnostic disable-next-line: missing-fields
+      require 'nvim-treesitter.configs'.setup({
+        auto_install = true,
+      })
+    end,
+  },
   {
     "williamboman/mason.nvim",
     opts = {
@@ -45,7 +54,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    requires = { "nvim-treesitter/nvim-treesitter" },
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = {},
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
