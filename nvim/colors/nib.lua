@@ -27,14 +27,6 @@ local c = {
   white         = 15,
 }
 
--- Invert greyscale for light background
-if vim.o.background == "light" then
-  c.black = 15
-  c.white = 0
-  c.lightgray = 8
-  c.darkgray = 7
-end
-
 local theme = {
   -- Cursor
   TermCursor        = { cterm = { reverse = true } },
