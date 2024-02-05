@@ -20,6 +20,7 @@ ln -sfT "$HOME/.dotfiles/.gitconfig" "$HOME/.gitconfig"
 mkdir -p "$HOME/.config/"
 ln -sfTn "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
 ln -sfT "$HOME/.dotfiles/.tmux.conf" "$HOME/.tmux.conf"
+ln -sfT "$HOME/.dotfiles/lazygit/config.yml" "$HOME/.config/lazygit/config.yml"
 
 # Setup ssh key
 if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
