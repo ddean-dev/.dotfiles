@@ -7,7 +7,7 @@ if [ ! -x "$(command -v brew)" ]; then
 fi
 
 # Install packages from brew
-brew install starship eza walk neovim lazygit node pnpm luarocks go zig rust cmake glibc
+brew install starship eza neovim lazygit keychain node pnpm luarocks go zig rust cmake glibc
 
 # Intall tmux package manager
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
@@ -25,10 +25,10 @@ ln -sfT "$HOME/.dotfiles/.tmux.conf" "$HOME/.tmux.conf"
 if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
   echo "Generating SSH Key"
   ssh-keygen -t ed25519 -C "david@ddean.dev"
-  eval "$(ssh-agent -s)"
+  eval `keychain --eval --quiet --agents ssh`
   ssh-add ~/.ssh/id_ed25519
 fi
 
-#echo "Add below key to GitHub"
+echo "Add below key to GitHub"
 cat ~/.ssh/id_ed25519.pub
-#echo "Add above key to GitHub"
+echo "Add above key to GitHub"
