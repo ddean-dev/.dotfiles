@@ -44,6 +44,7 @@ vim.opt.virtualedit = "block"                 -- Allow cursor to move where ther
 vim.opt.wildmode = "longest:full,full"        -- Command-line completion mode
 vim.opt.winminwidth = 5                       -- Minimum window width
 vim.opt.wrap = false                          -- Disable line wrap
+vim.opt.colorcolumn = "120"                   -- set long line warning
 vim.opt.foldcolumn = '0'                      -- don't show fold column
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
