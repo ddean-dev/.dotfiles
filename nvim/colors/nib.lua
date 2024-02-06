@@ -91,7 +91,7 @@ local theme = {
   DiffText          = { ctermfg = c.black, ctermbg = c.brightyellow, cterm = { bold = true } },
 
   --LSP
-  Comment           = { ctermfg = c.lightgray },
+  Comment           = { ctermfg = c.darkgray },
   Constant          = { ctermfg = c.yellow },
   Identifier        = { ctermfg = c.white },
   Function          = { ctermfg = c.blue },
