@@ -7,7 +7,7 @@ if [ ! -x "$(command -v brew)" ]; then
 fi
 
 # Install packages from brew
-brew install starship eza neovim lazygit keychain node pnpm luarocks go zig rust cmake glibc
+brew install starship eza neovim lazygit keychain node pnpm luarocks go zig rust cmake
 
 # Intall tmux package manager
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
