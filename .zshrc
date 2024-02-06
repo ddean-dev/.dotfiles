@@ -3,16 +3,29 @@ bindkey -e
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
-# Aliases
-alias ls='eza --icons'
-alias dir='eza --long --header --git --time-style=iso --icons'
-alias vim='nvim'
-alias lg='lazygit'
-alias reload='source $HOME/.zshrc'
-
 # Environment
-export EDITOR=nvim
-export MANPAGER='nvim +Man!'
+alias reload='source $HOME/.zshrc'
+if [ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+if [ -x "$(command -v starship)" ]; then
+  eval "$(starship init zsh)"
+fi
+if [ -x "$(command -v keychain)" ]; then
+  eval `keychain --eval --quiet --agents ssh`
+fi
+if [ -x "$(command -v eza)" ]; then
+  alias ls='eza --icons'
+  alias dir='eza --long --header --git --time-style=iso --icons'
+fi
+if [ -x "$(command -v nvim)" ]; then
+  alias vim='nvim'
+  export EDITOR=nvim
+  export MANPAGER='nvim +Man!'
+fi
+if [ -x "$(command -v lazygit)" ]; then
+  alias lg='lazygit'
+fi
 
 # ZSH settings
 HISTFILE=~/.histfile
@@ -28,11 +41,7 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' verbose true
 autoload -Uz compinit; compinit
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(starship init zsh)"
-eval `keychain --eval --quiet --agents ssh`
-
 # Start tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux new-session -A -s LOCAL
+  exec tmux new-session -A -s MAIN
 fi
