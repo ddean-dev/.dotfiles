@@ -26,6 +26,7 @@ vim.opt.shortmess:append(
   { W = true, I = true, c = true, C = true }  -- Prevent "Press Enter" prompts
 )
 vim.opt.showmode = false                      -- Dont show mode since we have a statusline
+vim.opt.showcmdloc = "statusline"
 vim.opt.sidescrolloff = 8                     -- Columns of context
 vim.opt.signcolumn = "yes"                    -- Always show the signcolumn
 vim.opt.smartcase = true                      -- Don't ignore case with capitals

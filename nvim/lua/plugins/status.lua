@@ -15,7 +15,7 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', 'folke/noice.nvim' },
-    config = function(_, opts)
+    config = function()
       require('lualine').setup(
         {
           sections = {
@@ -37,7 +37,7 @@ return {
               end
             }, 'diff', 'diagnostics' },
             lualine_c = { { 'filename', path = 1 } },
-            lualine_x = { 'selectioncount', 'searchcount' },
+            lualine_x = { '%S', 'selectioncount', 'searchcount' },
             lualine_y = { 'encoding', 'fileformat', 'filetype' },
             lualine_z = { 'location' },
           },
