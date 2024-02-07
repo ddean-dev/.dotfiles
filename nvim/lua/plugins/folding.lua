@@ -7,6 +7,7 @@ return {
           highlight = {
             "RainbowDarkGray",
           },
+          tab_char = "▎",
         },
       })
     end,
