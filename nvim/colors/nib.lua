@@ -92,9 +92,10 @@ local theme = {
 
   --LSP
   Comment           = { ctermfg = c.darkgray },
-  Constant          = { ctermfg = c.yellow },
-  Identifier        = { ctermfg = c.white },
-  Function          = { ctermfg = c.blue },
+  Constant          = { ctermfg = c.white },
+  Float             = { ctermfg = c.brightred },
+  Identifier        = { ctermfg = c.blue },
+  Function          = { ctermfg = c.brightblue },
   Statement         = { ctermfg = c.cyan },
   PreProc           = { ctermfg = c.red },
   Type              = { ctermfg = c.green },
