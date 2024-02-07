@@ -105,16 +105,7 @@ local theme = {
   Error             = { ctermfg = c.white, ctermbg = c.brightred },
   Todo              = { cterm = { underline = true }, ctermfg = c.black, ctermbg = c.brightyellow },
 
-  --Rainbow
-  RainbowRed        = { ctermfg = c.red },
-  RainbowYellow     = { ctermfg = c.yellow },
-  RainbowBlue       = { ctermfg = c.blue },
-  RainbowMagenta    = { ctermfg = c.magenta },
-  RainbowGreen      = { ctermfg = c.green },
-  RainbowCyan       = { ctermfg = c.cyan },
-  RainbowDarkGray   = { ctermfg = c.darkgray },
-
-  --Noice()
+  -- Noice(https://github.com/folke/noice.nvim)
   NoiceCursor       = { cterm = { reverse = true } },
 
   -- Notify(https://github.com/rcarriga/nvim-notify)
@@ -138,6 +129,9 @@ local theme = {
   NotifyINFOBody    = { link = "Normal" },
   NotifyDEBUGBody   = { link = "Normal" },
   NotifyTRACEBody   = { link = "Normal" },
+
+  -- Indent Blankline(https://github.com/lukas-reineke/indent-blankline.nvim)
+  IblIndent         = { ctermfg = c.darkgray },
 }
 
 for group, colors in pairs(theme) do

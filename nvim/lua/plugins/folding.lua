@@ -4,9 +4,6 @@ return {
     config = function()
       require("ibl").setup({
         indent = {
-          highlight = {
-            "RainbowDarkGray",
-          },
           tab_char = "▎",
         },
       })
