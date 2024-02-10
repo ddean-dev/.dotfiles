@@ -17,9 +17,9 @@ fi
 # Symlink config files
 ln -sfT "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc"
 ln -sfT "$HOME/.dotfiles/.gitconfig" "$HOME/.gitconfig"
+ln -sfT "$HOME/.dotfiles/.tmux.conf" "$HOME/.tmux.conf"
 mkdir -p "$HOME/.config/"
 ln -sfTn "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
-ln -sfT "$HOME/.dotfiles/.tmux.conf" "$HOME/.tmux.conf"
 ln -sfT "$HOME/.dotfiles/lazygit/config.yml" "$HOME/.config/lazygit/config.yml"
 
 # Setup ssh key
@@ -29,7 +29,6 @@ if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
   eval `keychain --eval --quiet --agents ssh`
   ssh-add ~/.ssh/id_ed25519
 fi
-
 echo "Add below key to GitHub"
 cat ~/.ssh/id_ed25519.pub
 echo "Add above key to GitHub"
