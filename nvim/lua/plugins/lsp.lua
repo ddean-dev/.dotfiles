@@ -11,12 +11,13 @@ return {
   },
   {
     "williamboman/mason.nvim",
-    opts = {
-      ui = {
-        border = "single"
-      },
-    },
-    config = function(_, opts) require("mason").setup(opts) end,
+    config = function()
+      require("mason").setup({
+        ui = {
+          border = "rounded"
+        },
+      })
+    end,
   },
   {
     "folke/neodev.nvim",
@@ -35,7 +36,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { "folke/neodev.nvim" },
     keys = {
-      { '<leader>ca', vim.lsp.buf.code_action, desc = "Code Action" },
+      { '<leader>q',  vim.lsp.buf.code_action, desc = "Quick Action" },
       { '<leader>cr', vim.lsp.buf.rename,      desc = "Rename" },
       { 'K',          vim.lsp.buf.hover,       desc = "Hover" }
     },
