@@ -35,7 +35,7 @@ local theme = {
   CursorLine        = { cterm = { underline = true } },
 
   -- UI
-  WinSeparator      = { ctermfg = c.lightgray, ctermbg = c.darkgray },
+  WinSeparator      = { ctermfg = c.lightgray },
 
   -- Gutter
   LineNr            = { ctermfg = c.darkgray },
@@ -59,10 +59,10 @@ local theme = {
   TabLineFill       = { cterm = { reverse = true } },
 
   -- Popup Menu
-  PmenuSbar         = { ctermbg = c.darkgray },
-  PmenuThumb        = { ctermbg = c.black },
   Pmenu             = { ctermfg = c.white, ctermbg = c.ddarkgray },
   PmenuSel          = { ctermfg = c.darkgray, ctermbg = c.white },
+  PmenuSbar         = { ctermbg = c.darkgray },
+  PmenuThumb        = { ctermbg = c.black },
 
   -- Special Characters
   SpecialKey        = { ctermfg = c.brightred },
@@ -132,6 +132,11 @@ local theme = {
 
   -- Indent Blankline(https://github.com/lukas-reineke/indent-blankline.nvim)
   IblIndent         = { ctermfg = c.darkgray },
+
+  -- GitSigns(https://github.com/lewis6991/gitsigns.nvim)
+  GitSignsAddNr     = { ctermfg = c.green },
+  GitSignsChangeNr  = { ctermfg = c.yellow },
+  GitSignsDeleteNr  = { ctermfg = c.red },
 }
 
 for group, colors in pairs(theme) do
