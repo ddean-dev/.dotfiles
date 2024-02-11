@@ -38,18 +38,16 @@ return {
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
-    opts = {
-      plugins = { spelling = true },
-      defaults = {
+    config = function()
+      local wk = require("which-key")
+      wk.setup({
+        plugins = { spelling = true },
+      })
+      wk.register({
         mode = { "n", "v" },
         ["<leader>c"] = { name = "+code" },
         ["<leader>g"] = { name = "+git" },
-      },
-    },
-    config = function(_, opts)
-      local wk = require("which-key")
-      wk.setup(opts)
-      wk.register(opts.defaults)
+      })
     end,
   },
 }

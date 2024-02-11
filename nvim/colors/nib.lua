@@ -51,18 +51,16 @@ local theme = {
   Folded                      = { ctermfg = c.lightgray, ctermbg = c.darkgray },
 
   -- Satus Bar
-  ModeMsg                     = { cterm = { bold = true } },
-  StatusLine                  = { ctermfg = c.white, ctermbg = c.ddarkgray, cterm = { bold = true } },
+  StatusLine                  = { ctermfg = c.white, ctermbg = "NONE" },
   StatusLineNC                = { ctermfg = c.lightgray, ctermbg = c.darkgray },
   TabLine                     = { cterm = { underline = true }, ctermfg = c.black, ctermbg = c.lightgray },
-  TabLineSel                  = { cterm = { bold = true } },
   TabLineFill                 = { cterm = { reverse = true } },
 
   -- Popup Menu
-  Pmenu                       = { ctermfg = c.white, ctermbg = c.ddarkgray },
-  PmenuSel                    = { ctermfg = c.darkgray, ctermbg = c.white },
-  PmenuSbar                   = { ctermbg = c.darkgray },
-  PmenuThumb                  = { ctermbg = c.black },
+  Pmenu                       = { ctermfg = c.white, ctermbg = "NONE" },
+  PmenuSel                    = { cterm = { reverse = true } },
+  PmenuSbar                   = { ctermfg = c.white, ctermbg = c.black },
+  PmenuThumb                  = { cterm = { reverse = true } },
 
   -- Special Characters
   SpecialKey                  = { ctermfg = c.brightred },
@@ -88,7 +86,7 @@ local theme = {
   DiffAdd                     = { ctermfg = c.black, ctermbg = c.green },
   DiffChange                  = { ctermfg = c.black, ctermbg = c.yellow },
   DiffDelete                  = { ctermfg = c.black, ctermbg = c.red },
-  DiffText                    = { ctermfg = c.black, ctermbg = c.brightyellow, cterm = { bold = true } },
+  DiffText                    = { ctermfg = c.black, ctermbg = c.brightyellow },
 
   --LSP
   Comment                     = { ctermfg = c.darkgray },
@@ -141,6 +139,7 @@ local theme = {
   -- TreeSitterContext (https://github.com/nvim-treesitter/nvim-treesitter-context)
   TreesitterContext           = { cterm = { italic = true } },
   TreesitterContextLineNumber = { cterm = { italic = true } },
+  TreesitterContextSeparator  = { ctermfg = c.darkgray },
 }
 
 for group, colors in pairs(theme) do

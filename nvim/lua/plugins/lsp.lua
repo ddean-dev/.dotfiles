@@ -100,7 +100,9 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-context",
     config = function()
-      require('treesitter-context').setup({
+      local context = require("treesitter-context")
+      vim.keymap.set("n", "gC", context.go_to_context, { desc = "Go to context" })
+      context.setup({
         enable = true,
         separator = "·",
         max_lines = 3,
