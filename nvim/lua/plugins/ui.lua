@@ -21,7 +21,9 @@ return {
   },
   { "stevearc/dressing.nvim" },
   {
-    "rcarriga/nvim-notify",
+    --"rcarriga/nvim-notify",
+    "ddean-dev/nvim-notify",
+    branch = "telescope_wrap",
     opts = {
       stages = "static",
     },
