@@ -6,6 +6,7 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
       "L3MON4D3/LuaSnip",
     },
     opts = function()
@@ -35,11 +36,6 @@ return {
         }, {
           { name = "buffer" },
         }),
-        experimental = {
-          ghost_text = {
-            hl_group = "CmpGhostText",
-          },
-        },
         sorting = defaults.sorting,
         snippet = {
           expand = function(args)

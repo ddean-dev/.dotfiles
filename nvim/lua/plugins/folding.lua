@@ -4,7 +4,8 @@ return {
     config = function()
       require("ibl").setup({
         indent = {
-          tab_char = "▎",
+          char = "",
+          tab_char = "",
         },
       })
     end,
