@@ -134,9 +134,9 @@ local theme = {
   IblIndent                   = { ctermfg = c.darkgray },
 
   -- GitSigns(https://github.com/lewis6991/gitsigns.nvim)
-  GitSignsAddNr               = { ctermfg = c.brightgreen },
-  GitSignsChangeNr            = { ctermfg = c.brightyellow},
-  GitSignsDeleteNr            = { ctermfg = c.brightred},
+  GitSignsAddNr               = { ctermbg = c.green },
+  GitSignsChangeNr            = { ctermbg = c.yellow },
+  GitSignsDeleteNr            = { ctermbg = c.red },
 
   -- TreeSitterContext (https://github.com/nvim-treesitter/nvim-treesitter-context)
   TreesitterContext           = { cterm = { italic = true } },
