@@ -31,24 +31,5 @@ return {
       { "=p",        "<Plug>(YankyPutAfterFilter)",            desc = "Put after applying a filter" },
       { "=P",        "<Plug>(YankyPutBeforeFilter)",           desc = "Put before applying a filter" },
     },
-  },
-  {
-    "ThePrimeagen/refactoring.nvim",
-    keys = {
-      { "<leader>ce", ":Refactor extract ",              desc = "Extract",              mode = "x" },
-      { "<leader>cf", ":Refactor extract_to_file ",      desc = "Extract to File",      mode = "x" },
-      { "<leader>cv", ":Refactor extract_var ",          desc = "Extract Variable",     mode = "x" },
-      { "<leader>ci", ":Refactor inline_var",            desc = "Inline Variable",      mode = { "n", "x" } },
-      { "<leader>cI", ":Refactor inline_func",           desc = "Inline Function", },
-      { "<leader>cb", ":Refactor extract_block",         desc = "Extract Block" },
-      { "<leader>cB", ":Refactor extract_block_to_file", desc = "Extract Block to File" },
-    },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("refactoring").setup()
-    end,
-  },
+  }
 }
