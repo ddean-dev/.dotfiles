@@ -17,7 +17,7 @@ return {
         lsp_doc_border = true,
       },
     },
-    dependencies = { "MunifTanjim/nui.nvim", 'rcarriga/nvim-notify' },
+    dependencies = { "MunifTanjim/nui.nvim", 'ddean-dev/nvim-notify' },
   },
   { "stevearc/dressing.nvim" },
   {

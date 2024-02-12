@@ -9,7 +9,7 @@ return {
       { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find File" },
       { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
       { "<leader>.", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Fuzzy Find" },
-      { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+      --{ "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
       { "'", "<cmd>Telescope marks<cr>", desc = "Marks" },
       { "<leader>h", "<cmd>Telescope help_tags<cr>", desc = "Help Search" },
       { "<leader>m", "<cmd>Telescope man_pages<cr>", desc = "Manual Pages" },
@@ -29,7 +29,7 @@ return {
     opts = {
       pickers = {
         symbols = {
-          sources = { 'emoji' },
+          sources = { 'emoji', 'nerd' },
         },
         find_files = {
           find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
@@ -63,7 +63,6 @@ return {
                 i = {
                   ["<cr>"] = require("telescope-undo.actions").restore,
                   ["<C-y>"] = require("telescope-undo.actions").yank_deletions,
-                  ["<C-r>"] = require("telescope-undo.actions").restore,
                 },
               },
             },

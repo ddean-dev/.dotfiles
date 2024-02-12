@@ -144,6 +144,10 @@ local theme = {
   TreesitterContext           = { cterm = { italic = true } },
   TreesitterContextLineNumber = { cterm = { italic = true } },
   TreesitterContextSeparator  = { ctermfg = c.darkgray },
+
+  -- DAP
+  DapBreakpoint               = { ctermfg = c.brightred },
+  DapLogpoint                 = { ctermfg = c.brightyellow },
 }
 
 for group, colors in pairs(theme) do
