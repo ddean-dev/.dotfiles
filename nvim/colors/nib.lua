@@ -56,11 +56,12 @@ local theme = {
   TabLine                     = { cterm = { underline = true }, ctermfg = c.black, ctermbg = c.lightgray },
   TabLineFill                 = { cterm = { reverse = true } },
 
-  -- Popup Menu
+  -- Popup Menusasdfasdf
   Pmenu                       = { ctermfg = c.white, ctermbg = "NONE" },
   PmenuSel                    = { cterm = { reverse = true } },
   PmenuSbar                   = { ctermfg = c.white, ctermbg = c.black },
   PmenuThumb                  = { cterm = { reverse = true } },
+  FloatBorder                 = { ctermfg = c.blue },
 
   -- Special Characters
   SpecialKey                  = { ctermfg = c.brightred },
@@ -135,6 +136,9 @@ local theme = {
   GitSignsAddNr               = { ctermbg = c.green },
   GitSignsChangeNr            = { ctermbg = c.yellow },
   GitSignsDeleteNr            = { ctermbg = c.red },
+  GitSignsAddInline           = { ctermbg = c.green },
+  GitSignsChangeInline        = { ctermbg = c.yellow },
+  GitSignsDeleteInline        = { ctermbg = c.red },
 
   -- TreeSitterContext (https://github.com/nvim-treesitter/nvim-treesitter-context)
   TreesitterContext           = { cterm = { italic = true } },
