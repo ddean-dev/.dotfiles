@@ -26,6 +26,9 @@ fi
 if [ -x "$(command -v lazygit)" ]; then
   alias lg='lazygit'
 fi
+if [ -x "$(command -v tmux)" ]; then
+  alias tx="tmux new-session -A -s MAIN"
+fi
 
 # ZSH settings
 HISTFILE=~/.histfile
@@ -43,5 +46,5 @@ autoload -Uz compinit; compinit
 
 # Start tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux new-session -A -s MAIN
+  tmux new-session -A -s MAIN
 fi
