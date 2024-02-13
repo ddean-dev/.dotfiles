@@ -8,5 +8,6 @@ vim.keymap.set("n", "<C-Right>", "w", { desc = "Right word" })
 vim.keymap.set("n", "<C-Left>", "b", { desc = "Left word" })
 vim.keymap.set("n", "<C-w>%", "<cmd>vsplit<cr>", { desc = "Split Right" })
 vim.keymap.set("n", '<C-w>"', "<cmd>split<cr>", { desc = "Split Below" })
+vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit" })
 
 return {}

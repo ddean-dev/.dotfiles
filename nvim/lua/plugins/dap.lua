@@ -2,11 +2,12 @@ return {
   {
     "mfussenegger/nvim-dap",
     keys = {
-      { '<Leader>b', function() require('dap').toggle_breakpoint() end, desc = "Breakpoint" },
-      { '<F5>',      function() require('dap').continue() end,          desc = "Continue" },
-      { '<F10>',     function() require('dap').step_over() end,         desc = "Step Over" },
-      { '<F11>',     function() require('dap').step_into() end,         desc = "Step Into" },
-      { '<F12>',     function() require('dap').step_out() end,          desc = "Step Out" },
+      { '<leader>b',  function() require('dap').toggle_breakpoint() end, desc = "Breakpoint" },
+      { '<f5>',       function() require('dap').continue() end,          desc = "Continue" },
+      { '<f10>',      function() require('dap').step_over() end,         desc = "Step Over" },
+      { '<f11>',      function() require('dap').step_into() end,         desc = "Step Into" },
+      { '<f12>',      function() require('dap').step_out() end,          desc = "Step Out" },
+      { '<leader>Do', function() require('dap').repl.toggle() end,       desc = "Open REPL" },
     },
     config = function()
       vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpoint' })
@@ -36,7 +37,9 @@ return {
     "nvim-telescope/telescope-dap.nvim",
     dependencies = "nvim-telescope/telescope.nvim",
     keys = {
-      { "<leader>B", "<cmd>Telescope dap list_breakpoints<cr>", desc = "Breakpoints", }
+      { "<leader>Db", "<cmd>Telescope dap list_breakpoints<cr>", desc = "Breakpoints" },
+      { "<leader>Df", "<cmd>Telescope dap frames<cr>",           desc = "Frames" },
+      { "<leader>Dv", "<cmd>Telescope dap variables<cr>",        desc = "Variables" },
     },
     config = function()
       require('telescope').load_extension('dap')

@@ -48,6 +48,8 @@ return {
         mode = { "n", "v" },
         ["<leader>c"] = { name = "+code" },
         ["<leader>g"] = { name = "+git" },
+        ["<leader>q"] = { name = "+quit" },
+        ["<leader>D"] = { name = "+debuger" }
       })
     end,
   },
