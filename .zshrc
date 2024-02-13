@@ -29,6 +29,9 @@ fi
 if [ -x "$(command -v tmux)" ]; then
   alias tx="tmux new-session -A -s MAIN"
 fi
+if [ -x "$(command -v go)" ]; then
+  export PATH=$PATH:$HOME/go/bin
+fi
 
 # ZSH settings
 HISTFILE=~/.histfile
