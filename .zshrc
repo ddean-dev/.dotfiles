@@ -1,3 +1,8 @@
+# Enter Tmux Imediately
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  eval "$(tmux new-session -A -s MAIN)"
+fi
+
 # Keybindings
 bindkey -e
 bindkey "^[[1;5D" backward-word
@@ -49,8 +54,3 @@ zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' verbose true
 autoload -Uz compinit; compinit
-
-# Start tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  tmux new-session -A -s MAIN
-fi
