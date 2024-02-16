@@ -1,4 +1,4 @@
-# Enter Tmux Imediately
+# Start Tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   eval "$(tmux new-session -A -s MAIN)"
 fi
@@ -16,11 +16,8 @@ fi
 if [ -x "$(command -v starship)" ]; then
   eval "$(starship init zsh)"
 fi
-if [ -x "$(command -v keychain)" ]; then
-  eval `keychain --eval --quiet --agents ssh`
-  if ! ssh-add -l > /dev/null ; then
-    ssh-add -q ~/.ssh/id_ed25519
-  fi
+if [ -x "$(command -v tmux)" ]; then
+  alias tx="tmux new-session -A -s MAIN"
 fi
 if [ -x "$(command -v eza)" ]; then
   alias ls='eza --icons'
@@ -33,12 +30,6 @@ if [ -x "$(command -v nvim)" ]; then
 fi
 if [ -x "$(command -v lazygit)" ]; then
   alias lg='lazygit'
-fi
-if [ -x "$(command -v tmux)" ]; then
-  alias tx="tmux new-session -A -s MAIN"
-fi
-if [ -x "$(command -v go)" ]; then
-  export PATH=$PATH:$HOME/go/bin
 fi
 
 # ZSH settings

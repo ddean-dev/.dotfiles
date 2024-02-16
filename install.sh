@@ -7,7 +7,7 @@ if [ ! -x "$(command -v brew)" ]; then
 fi
 
 # Install packages from brew
-brew install starship eza neovim lazygit keychain node pnpm luarocks go zig rust cmake
+brew install starship keychain eza neovim lazygit node pnpm luarocks go zig rust cmake
 
 # Intall tmux package manager
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
@@ -16,6 +16,8 @@ fi
 
 # Symlink config files
 ln -sfT "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc"
+ln -sfT "$HOME/.dotfiles/.zprofile" "$HOME/.zprofile"
+ln -sfT "$HOME/.dotfiles/.zshenv" "$HOME/.zshenv"
 ln -sfT "$HOME/.dotfiles/.gitconfig" "$HOME/.gitconfig"
 ln -sfT "$HOME/.dotfiles/.tmux.conf" "$HOME/.tmux.conf"
 mkdir -p "$HOME/.config/"
