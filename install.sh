@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Install homebrew
 if [ ! -x "$(command -v brew)" ]; then
