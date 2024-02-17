@@ -17,13 +17,11 @@ return {
         lsp_doc_border = true,
       },
     },
-    dependencies = { "MunifTanjim/nui.nvim", 'ddean-dev/nvim-notify' },
+    dependencies = { "MunifTanjim/nui.nvim", 'rcarriga/nvim-notify' },
   },
   { "stevearc/dressing.nvim" },
   {
-    --"rcarriga/nvim-notify",
-    "ddean-dev/nvim-notify",
-    branch = "telescope_wrap",
+    "rcarriga/nvim-notify",
     opts = {
       stages = "static",
     },
