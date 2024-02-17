@@ -2,7 +2,7 @@ return {
   {
     "mfussenegger/nvim-dap",
     keys = {
-      { '<leader>b',  function() require('dap').toggle_breakpoint() end, desc = "Breakpoint" },
+      { '<f1>',       function() require('dap').toggle_breakpoint() end, desc = "Breakpoint" },
       { '<f5>',       function() require('dap').continue() end,          desc = "Continue" },
       { '<f10>',      function() require('dap').step_over() end,         desc = "Step Over" },
       { '<f11>',      function() require('dap').step_into() end,         desc = "Step Into" },

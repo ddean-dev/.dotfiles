@@ -26,7 +26,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { "folke/neodev.nvim" },
     keys = {
-      { '<M-Enter>', vim.lsp.buf.code_action,    desc = "Code Action",    mode = { "n", "i" } },
+      { '<C-Enter>', vim.lsp.buf.code_action,    desc = "Code Action",    mode = { "n", "i" } },
       { '<C-K>',     vim.lsp.buf.signature_help, desc = "Signature Help", mode = { "n", "i" } },
       { '<leader>r', vim.lsp.buf.rename,         desc = "Rename" },
       { 'K',         vim.lsp.buf.hover,          desc = "Hover" },
