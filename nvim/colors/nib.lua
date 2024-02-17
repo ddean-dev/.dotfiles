@@ -48,7 +48,7 @@ local theme = {
   Visual                      = { ctermfg = "NONE", ctermbg = "NONE", cterm = { reverse = true } },
   Search                      = { ctermfg = c.black, ctermbg = c.brightyellow },
   MatchParen                  = { ctermbg = c.brightgreen },
-  Folded                      = { ctermfg = c.lightgray, ctermbg = c.darkgray },
+  Folded                      = { ctermbg = c.black },
 
   -- Satus Bar
   StatusLine                  = { ctermfg = c.white, ctermbg = "NONE" },
