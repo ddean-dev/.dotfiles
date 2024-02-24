@@ -1,5 +1,5 @@
-# Start Tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+# Start Tmux (if not in ssh/tmux/screen session)
+if [ -x "$(command -v tmux)" ] && [ -n "$PS1" ] && [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   eval "$(tmux new-session -A -s MAIN)"
 fi
 
