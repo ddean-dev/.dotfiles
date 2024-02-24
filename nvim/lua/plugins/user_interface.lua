@@ -40,7 +40,6 @@ return {
       local wk = require("which-key")
       wk.setup({
         plugins = { spelling = true },
-        window = { border = "rounded" },
       })
       wk.register({
         mode = { "n", "v" },

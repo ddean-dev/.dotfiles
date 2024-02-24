@@ -56,12 +56,13 @@ local theme = {
   TabLine                     = { cterm = { underline = true }, ctermfg = c.black, ctermbg = c.lightgray },
   TabLineFill                 = { cterm = { reverse = true } },
 
-  -- Popup Menusasdfasdf
-  Pmenu                       = { ctermfg = c.white, ctermbg = "NONE" },
+  -- Popup Menus
+  Pmenu                       = { ctermbg = c.black },
+  PmenuExtra                  = { ctermbg = c.darkgray },
   PmenuSel                    = { cterm = { reverse = true } },
-  PmenuSbar                   = { ctermfg = c.white, ctermbg = c.black },
+  PmenuSbar                   = { ctermfg = c.white, ctermbg = c.lightgray },
   PmenuThumb                  = { cterm = { reverse = true } },
-  FloatBorder                 = { ctermfg = c.blue },
+  FloatBorder                 = { ctermfg = c.blue, ctermbg = c.black },
 
   -- Special Characters
   SpecialKey                  = { ctermfg = c.brightred },
