@@ -66,3 +66,8 @@ zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' verbose true
 autoload -Uz compinit; compinit
+
+# Syntax Highlighting
+if test -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; then
+  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi

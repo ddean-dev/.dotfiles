@@ -6,8 +6,13 @@ if [ ! -x "$(command -v brew)" ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-# Install packages from brew
-brew install starship keychain eza neovim lazygit bat ripgrep fzf duf bottom node pnpm luarocks go zig rust cmake
+PACKAGES=""
+PACKAGES="$PACKAGES starship zsh-syntax-highlighting keychain"
+PACKAGES="$PACKAGES neovim lazygit"
+PACKAGES="$PACKAGES eza bat ripgrep fzf duf bottom"
+PACKAGES="$PACKAGES node pnpm luarocks go zig rust cmake"
+
+brew install $PACKAGES
 
 # Intall tmux package manager
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
