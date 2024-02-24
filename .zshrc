@@ -29,6 +29,15 @@ if [ -x "$(command -v eza)" ]; then
   alias ls='eza --icons'
   alias dir='eza --long --header --git --time-style=iso --icons'
 fi
+if [ -x "$(command -v bat)" ]; then
+  alias cat='bat'
+fi
+if [ -x "$(command -v rg)" ]; then
+  alias grep='rg'
+fi
+if [ -x "$(command -v duf)" ]; then
+  alias df='duf'
+fi
 if [ -x "$(command -v nvim)" ]; then
   alias vim='nvim'
   export EDITOR=nvim
