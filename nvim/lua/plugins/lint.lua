@@ -11,7 +11,10 @@ return {
     end
   },
   {
-    "rshkarin/mason-nvim-lint",
+    --TODO: Return to main branch if https://github.com/rshkarin/mason-nvim-lint/pull/2 merged
+    --"rshkarin/mason-nvim-lint",
+    "ddean-dev/mason-nvim-lint",
+    branch = "quiet-mode",
     dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-lint" },
     config = function()
       require("mason-nvim-lint").setup({
