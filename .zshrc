@@ -19,6 +19,9 @@ fi
 if [ -x "$(command -v tmux)" ]; then
   alias tx="tmux new-session -A -s MAIN"
 fi
+if [[ $TMUX ]]; then
+  alias clear='clear && tmux clear-history'
+fi
 if [ -x "$(command -v keychain)" ]; then
   eval `keychain --eval --quiet --agents ssh`
   if ! ssh-add -l > /dev/null ; then
@@ -29,6 +32,14 @@ if [ -x "$(command -v eza)" ]; then
   alias ls='eza --icons'
   alias dir='eza --long --header --git --time-style=iso --icons'
 fi
+if [ -x "$(command -v nvim)" ]; then
+  alias vim='nvim'
+  export EDITOR=nvim
+  export MANPAGER='nvim +Man!'
+fi
+if [ -x "$(command -v lazygit)" ]; then
+  alias lg='lazygit'
+fi
 if [ -x "$(command -v bat)" ]; then
   alias cat='bat'
 fi
@@ -38,13 +49,8 @@ fi
 if [ -x "$(command -v duf)" ]; then
   alias df='duf'
 fi
-if [ -x "$(command -v nvim)" ]; then
-  alias vim='nvim'
-  export EDITOR=nvim
-  export MANPAGER='nvim +Man!'
-fi
-if [ -x "$(command -v lazygit)" ]; then
-  alias lg='lazygit'
+if [ -x "$(command -v btm)" ]; then
+  alias top='btm'
 fi
 
 # ZSH settings
