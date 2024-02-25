@@ -68,6 +68,6 @@ zstyle ':completion:*' verbose true
 autoload -Uz compinit; compinit
 
 # Syntax Highlighting
-if test -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; then
+if [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
   source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
