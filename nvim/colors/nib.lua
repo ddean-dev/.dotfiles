@@ -32,7 +32,7 @@ local theme = {
   TermCursor                  = { cterm = { reverse = true } },
   CursorColumn                = { ctermbg = c.lightgray },
   ColorColumn                 = { ctermfg = c.lightgray, ctermbg = c.darkgray },
-  CursorLine                  = { cterm = { underline = true } },
+  CursorLine                  = {},
 
   -- UI
   WinSeparator                = { ctermfg = c.lightgray },
