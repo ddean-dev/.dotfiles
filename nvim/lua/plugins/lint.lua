@@ -18,7 +18,7 @@ return {
     dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-lint" },
     config = function()
       require("mason-nvim-lint").setup({
-        ensure_installed = { "luacheck" },
+        ensure_installed = {},
         automatic_installation = true,
         quiet_mode = true,
       })
