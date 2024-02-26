@@ -22,13 +22,13 @@ if [ -x "$(command -v apt)" ]; then
     starship neovim lazygit eza bottom \
     node pnpm luarocks go zig rust
 elif [ -x "$(command -v pacman)" ]; then
-  pacman -Syu
-  pacman -S \
-    git ssh keychain \
-    zsh zsh-syntax-highlighting \
-    eza bat ripgrep fzf duf bottom \
-    cmake node pnpm luarocks go zig rust
-  brew install starship neovim lazygit
+  sudo pacman -Syu
+  sudo pacman -Sy --needed \
+    git keychain man-pages man-db \
+    zsh zsh-syntax-highlighting starship \
+    bat ripgrep fzf duf bottom \
+    cmake pnpm luarocks go zig rust
+  brew install neovim lazygit eza node
 fi
 
 echo "#####################"
@@ -67,7 +67,7 @@ fi
 echo "###########################"
 echo "# Add below key to GitHub #"
 echo "###########################"
-bat ~/.ssh/id_ed25519.pub
+cat ~/.ssh/id_ed25519.pub
 echo "###########################"
 echo "# Add above key to GitHub #"
 echo "###########################"
