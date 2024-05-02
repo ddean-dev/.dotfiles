@@ -20,7 +20,7 @@ if [ -x "$(command -v apt)" ]; then
     cmake
   brew install \
     starship neovim lazygit eza bottom \
-    node pnpm luarocks go zig rust
+    node pnpm luarocks go zig rust protobuf
 elif [ -x "$(command -v pacman)" ]; then
   sudo pacman -Syu
   sudo pacman -Sy --needed \
@@ -28,7 +28,7 @@ elif [ -x "$(command -v pacman)" ]; then
     zsh zsh-syntax-highlighting starship \
     bat ripgrep fzf duf bottom \
     cmake pnpm luarocks go zig rust
-  brew install neovim lazygit eza node
+  brew install neovim lazygit eza node protobuf
 fi
 
 echo "#####################"
