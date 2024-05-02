@@ -1,6 +1,7 @@
 -- Nibrodooh's Improved but Basic
 
 vim.opt.termguicolors = false
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25-blinkon100,r-cr:hor20-blinkon100,o:hor50,sm:block-blinkon100"
 
 if vim.g.colors_name then
   vim.cmd("hi clear")

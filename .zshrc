@@ -63,6 +63,8 @@ fi
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+# Set cursor type
+echo '\e[5 q'
 
 # Completion Settings
 zstyle ':completion:*' list-colors ''
