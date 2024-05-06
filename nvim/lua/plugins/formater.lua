@@ -8,7 +8,7 @@ return {
         lsp_fallback = true,
         timeout_ms = 500,
       })
-      vim.cmd.update()
+      vim.cmd.wall()
     end, { desc = "Save file" })
   end
 }
