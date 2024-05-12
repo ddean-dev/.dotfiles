@@ -14,7 +14,7 @@ return {
       { "'", "<cmd>Telescope marks<cr>", desc = "Marks" },
       { "<leader>h", "<cmd>Telescope help_tags<cr>", desc = "Help Search" },
       { "<leader>m", "<cmd>Telescope man_pages<cr>", desc = "Manual Pages" },
-      { "<leader>d", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
+      { "<leader>d", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Diagnostics" },
       { "<leader>gh", "<cmd>Telescope git_bcommits<cr>", desc = "History" },
       { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Commits" },
       { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Branches" },
@@ -26,15 +26,19 @@ return {
       { "gr", "<cmd>Telescope lsp_references<cr>", desc = "Go to References" },
       { "<leader>s", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Symbols" },
       { "<C-e>", "<cmd>Telescope symbols<cr>", desc = "Emoji🙂", mode = "i" },
+      { "<leader>q", "<cmd>Telescope quickfix<cr>", { desc = "Code Action" } },
     },
     opts = {
+      defaults = {
+        wrap_results = true,
+      },
       pickers = {
         symbols = {
           sources = { 'emoji', 'nerd' },
         },
         find_files = {
           find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
-        }
+        },
       }
     },
   },
