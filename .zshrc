@@ -52,11 +52,6 @@ fi
 if [ -x "$(command -v btm)" ]; then
   alias top='btm'
 fi
-if [ -s "/home/nibrodooh/.bun/_bun" ]; then
-  source "/home/nibrodooh/.bun/_bun"
-  export BUN_INSTALL="$HOME/.bun"
-  export PATH="$BUN_INSTALL/bin:$PATH"
-fi
 
 
 # ZSH settings
