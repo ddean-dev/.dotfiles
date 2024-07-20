@@ -39,7 +39,7 @@ return {
 				plugins = { spelling = true },
 				spec = {
 					{ "<leader>g", group = "Git" },
-					{ "<leader>D", group = "Debuger" },
+					{ "<leader>D", group = "Debugger" },
 				},
 			})
 		end,

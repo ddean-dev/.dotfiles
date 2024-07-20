@@ -22,7 +22,7 @@ return {
 			{ "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Status" },
 			{ "gD", "<cmd>Telescope lsp_declarations<cr>", desc = "Go to Declaration" },
 			{ "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Go to Definition" },
-			{ "gi", "<cmd>Telescope lsp_implementaions<cr>", desc = "Go to Implementation" },
+			{ "gi", "<cmd>Telescope lsp_implementations<cr>", desc = "Go to Implementation" },
 			{ "gr", "<cmd>Telescope lsp_references<cr>", desc = "Go to References" },
 			{ "<leader>s", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Symbols" },
 			{ "<C-e>", "<cmd>Telescope symbols<cr>", desc = "Emoji🙂", mode = "i" },

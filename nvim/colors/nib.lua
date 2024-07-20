@@ -51,7 +51,7 @@ local theme = {
 	MatchParen = { ctermbg = c.brightgreen },
 	Folded = { ctermbg = c.black },
 
-	-- Satus Bar
+	-- Status Bar
 	StatusLine = { ctermfg = c.white, ctermbg = "NONE" },
 	StatusLineNC = { ctermfg = c.lightgray, ctermbg = c.darkgray },
 	TabLine = { cterm = { underline = true }, ctermfg = c.black, ctermbg = c.lightgray },
