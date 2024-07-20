@@ -20,7 +20,7 @@ if [ -x "$(command -v apt)" ]; then
     cmake
   brew install \
     starship neovim lazygit eza bottom \
-    node pnpm luarocks go zig rust protobuf
+    node pnpm luarocks go zig rust protobuf typos-cli
 elif [ -x "$(command -v pacman)" ]; then
   sudo pacman -Syu
   sudo pacman -Sy --needed \
@@ -28,7 +28,7 @@ elif [ -x "$(command -v pacman)" ]; then
     zsh zsh-syntax-highlighting starship \
     bat ripgrep fzf duf bottom \
     cmake pnpm luarocks go zig rust
-  brew install neovim lazygit eza node protobuf
+  brew install neovim lazygit eza node protobuf typos-cli
 fi
 
 echo "#####################"
@@ -39,7 +39,6 @@ if [ ! -d "$HOME/.dotfiles/" ]; then
 fi
 git -C "$HOME/.dotfiles/" fetch
 git -C "$HOME/.dotfiles/" pull
-
 
 echo "##################################"
 echo "# Symlinking configuration files #"
@@ -53,13 +52,12 @@ mkdir -p "$HOME/.config/"
 ln -sfTn "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
 ln -sfTn "$HOME/.dotfiles/lazygit" "$HOME/.config/lazygit"
 
-
 if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
   echo "######################"
   echo "# Generating SSH Key #"
   echo "######################"
   ssh-keygen -t ed25519 -C "david@ddean.dev"
-  eval `keychain --eval --quiet --agents ssh`
+  eval $(keychain --eval --quiet --agents ssh)
   ssh-add ~/.ssh/id_ed25519
 fi
 
