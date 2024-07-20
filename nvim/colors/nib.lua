@@ -63,7 +63,7 @@ local theme = {
 	PmenuSel = { cterm = { reverse = true } },
 	PmenuSbar = { ctermfg = c.white, ctermbg = c.lightgray },
 	PmenuThumb = { cterm = { reverse = true } },
-	FloatBorder = { ctermfg = c.blue, ctermbg = c.black },
+	FloatBorder = { ctermfg = c.blue },
 
 	-- Special Characters
 	SpecialKey = { ctermfg = c.brightred },

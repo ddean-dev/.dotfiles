@@ -2,21 +2,23 @@ return {
 	{
 		"williamboman/mason.nvim",
 		config = function()
-			require("mason").setup({})
+			require("mason").setup({
+				ui = {
+					border = "rounded",
+				},
+			})
 		end,
 	},
 	{
-		"folke/neodev.nvim",
-		config = function()
-			require("neodev").setup({
-				override = function(root_dir, library)
-					if root_dir:find("/.dotfiles", 1, true) == 1 then
-						library.enabled = true
-						library.plugins = true
-					end
-				end,
-			})
-		end,
+		"folke/lazydev.nvim",
+		ft = "lua",
+		opts = {
+			---@type boolean|(fun(root:string):boolean?)
+			enabled = function(root_dir)
+				local found = root_dir:find("/.dotfiles")
+				return found ~= nil
+			end,
+		},
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -36,7 +38,31 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			local lsp = require("mason-lspconfig")
-			lsp.setup()
+			lsp.setup({
+				ensure_installed = {
+					"typos_lsp", --spellcheck
+					"marksman", --markdown
+					"jsonls", --json
+					"yamlls", --yaml
+					"taplo", --toml
+
+					"bashls", --bash
+					"lua_ls", --lua
+
+					"eslint", --javascript, typescript
+					"tsserver", --typescript
+					"cssls", --css
+
+					"gopls", --go
+					"pyright", --python
+					"ruff_lsp", --python
+					"rust_analyzer", --rust
+
+					"docker_compose_language_service", --docker
+					"dockerls", --docker
+				},
+				automatic_installation = true,
+			})
 			require("mason-lspconfig").setup_handlers({
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
