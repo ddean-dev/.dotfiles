@@ -6,7 +6,6 @@ return {
 			lsp = {
 				override = {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-					["vim.lsp.util.stylize_markdown"] = true,
 					["cmp.entry.get_documentation"] = true,
 				},
 			},
@@ -40,6 +39,23 @@ return {
 				spec = {
 					{ "<leader>g", group = "Git" },
 					{ "<leader>D", group = "Debugger" },
+				},
+			})
+		end,
+	},
+	{
+		"MeanderingProgrammer/markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("render-markdown").setup({
+				heading = {
+					backgrounds = {
+						"Folded",
+					},
+					icons = { "󰠶 " },
+				},
+				code = {
+					style = "language",
 				},
 			})
 		end,
