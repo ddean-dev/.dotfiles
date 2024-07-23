@@ -81,4 +81,15 @@ return {
 		"nvim-telescope/telescope-symbols.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim" },
 	},
+	{
+		"benfowler/telescope-luasnip.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+		keys = {
+			{ "<leader>S", "<cmd>Telescope luasnip<cr>", desc = "Snippets" },
+		},
+		config = function()
+			require("telescope").load_extension("luasnip")
+			local lst = require("telescope").extensions.luasnip
+		end,
+	},
 }
