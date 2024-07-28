@@ -3,7 +3,8 @@ return {
 		"mfussenegger/nvim-lint",
 		dependencies = { "williamboman/mason.nvim" },
 		config = function()
-			require("lint").linters_by_ft = {
+			local lint = require("lint")
+			lint.linters_by_ft = {
 				javascript = { "eslint" },
 				typescript = { "eslint" },
 			}

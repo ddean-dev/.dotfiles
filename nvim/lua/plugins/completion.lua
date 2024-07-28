@@ -24,9 +24,12 @@ return {
 						behavior = cmp.ConfirmBehavior.Replace,
 						select = true,
 					}),
-					["<C-CR>"] = function(fallback)
-						cmp.abort()
-						fallback()
+					["<esc>"] = function(fallback)
+						if cmp.visible() then
+							cmp.abort()
+						else
+							fallback()
+						end
 					end,
 				}),
 				sources = cmp.config.sources({
