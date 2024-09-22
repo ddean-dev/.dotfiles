@@ -44,29 +44,6 @@ return {
 		end,
 	},
 	{
-		"tris203/precognition.nvim",
-		opts = {
-			startVisible = false,
-		},
-		config = function()
-			local group = vim.api.nvim_create_augroup("visual_event", { clear = true })
-			vim.api.nvim_create_autocmd("ModeChanged", {
-				group = group,
-				pattern = { "*:[vV\x16]*" },
-				callback = function()
-					require("precognition").show()
-				end,
-			})
-			vim.api.nvim_create_autocmd("ModeChanged", {
-				group = group,
-				pattern = { "[vV\x16]*:*" },
-				callback = function()
-					require("precognition").hide()
-				end,
-			})
-		end,
-	},
-	{
 		"MeanderingProgrammer/markdown.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 		config = function()

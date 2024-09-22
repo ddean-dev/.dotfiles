@@ -50,7 +50,7 @@ return {
 					"lua_ls", --lua
 
 					"eslint", --javascript, typescript
-					"tsserver", --typescript
+					"ts_ls", --typescript
 					"cssls", --css
 
 					"gopls", --go
