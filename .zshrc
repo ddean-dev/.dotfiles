@@ -52,6 +52,13 @@ fi
 if [ -x "$(command -v btm)" ]; then
   alias top='btm'
 fi
+if [-x "$(command -v pnpm)" ]; then
+  export PNPM_HOME="/home/ddean/.local/share/pnpm"
+  case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+  esac
+fi
 
 
 # ZSH settings
