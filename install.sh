@@ -15,7 +15,7 @@ if [ -x "$(command -v apt)" ]; then
   sudo apt update && sudo apt upgrade
   sudo apt install \
     git ssh keychain \
-    zsh zsh-syntax-highlighting \
+    zsh tmux zsh-syntax-highlighting \
     bat ripgrep fzf duf \
     cmake
   brew install \
