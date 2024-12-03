@@ -41,7 +41,7 @@ return {
 			lsp.setup({
 				ensure_installed = {
 					"typos_lsp", --spellcheck
-					"vale_ls", --grammarcheck
+					--"vale_ls", --grammarcheck
 					"marksman", --markdown
 					"jsonls", --json
 					"yamlls", --yaml
@@ -56,7 +56,7 @@ return {
 
 					"gopls", --go
 					"pyright", --python
-					"ruff_lsp", --python
+					"ruff", --python
 					"rust_analyzer", --rust
 
 					"docker_compose_language_service", --docker
@@ -66,7 +66,10 @@ return {
 			})
 			require("mason-lspconfig").setup_handlers({
 				function(server_name)
-					require("lspconfig")[server_name].setup({})
+					lspserver = require("lspconfig")[server_name]
+					if lspserver.setup then
+						lspserver.setup({})
+					end
 				end,
 			})
 		end,
