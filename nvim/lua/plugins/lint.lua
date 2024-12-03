@@ -7,6 +7,7 @@ return {
 			lint.linters_by_ft = {
 				javascript = { "eslint" },
 				typescript = { "eslint" },
+				go = { "staticcheck" },
 			}
 			vim.api.nvim_create_autocmd({ "TextChanged", "BufWritePost", "BufEnter" }, {
 				callback = function()
@@ -21,8 +22,8 @@ return {
 		config = function()
 			require("mason-nvim-lint").setup({
 				ensure_installed = {
-					"jsonlint", --json
 					"eslint_d", --javascript,typescript
+					"staticcheck",
 				},
 				automatic_installation = true,
 				quiet_mode = true,
