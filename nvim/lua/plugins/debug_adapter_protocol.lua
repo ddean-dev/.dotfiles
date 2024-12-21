@@ -87,4 +87,20 @@ return {
 			require("telescope").load_extension("dap")
 		end,
 	},
+	{
+		"rcarriga/nvim-dap-ui",
+		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+		keys = {
+			{
+				"<leader>DD",
+				function()
+					require("dapui").toggle({})
+				end,
+				desc = "Dap UI",
+			},
+		},
+		config = function(_, opts)
+			require("dapui").setup(opts)
+		end,
+	},
 }
