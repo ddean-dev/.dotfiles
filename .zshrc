@@ -60,6 +60,10 @@ if [ -x "$(command -v pnpm)" ]; then
   *) export PATH="$PNPM_HOME:$PATH" ;;
   esac
 fi
+if [ -x "$(command -v go)" ]; then
+  export GOPATH=$HOME/go
+  export PATH=$PATH:$GOPATH/bin
+fi
 
 
 # ZSH settings
