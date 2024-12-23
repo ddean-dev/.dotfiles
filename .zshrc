@@ -20,6 +20,9 @@ fi
 if [ -x "$(command -v tmux)" ]; then
   alias tx="tmux new-session -A -s MAIN"
 fi
+if [ -x "$(command -v fzf)" ]; then
+  source <(fzf --zsh)
+fi
 if [[ $TMUX ]]; then
   alias clear='clear && tmux clear-history'
 fi
