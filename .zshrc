@@ -1,7 +1,6 @@
 # Start Tmux (if not in ssh/tmux/screen session)
 if [ -x "$(command -v tmux)" ] && [ -n "$PS1" ] && [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   tmux new-session -A -s MAIN
-  exit
 fi
 
 # Keybindings
@@ -57,7 +56,7 @@ if [ -x "$(command -v btm)" ]; then
   alias top='btm'
 fi
 if [ -x "$(command -v pnpm)" ]; then
-  export PNPM_HOME="/home/ddean/.local/share/pnpm"
+  export PNPM_HOME="$HOME/.local/share/pnpm"
   case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
