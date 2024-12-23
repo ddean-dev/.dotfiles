@@ -35,7 +35,7 @@ return {
 		},
 		keys = {
 			-- Run API request
-			{ "<leader>h", "<cmd>HurlRunnerAt<CR>", desc = "Hurl Request" },
+			{ "<leader>H", "<cmd>HurlRunnerAt<CR>", desc = "Hurl Request" },
 		},
 	},
 }
