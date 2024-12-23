@@ -15,20 +15,22 @@ if [ -x "$(command -v apt)" ]; then
   sudo apt update && sudo apt upgrade
   sudo apt install \
     git ssh keychain \
-    zsh tmux zsh-syntax-highlighting \
-    bat ripgrep fzf duf \
-    cmake
+    tmux zsh zsh-syntax-highlighting \
+    eza bat ripgrep fzf duf \
+    nodejs npm lua luarocks golang rust-all
   brew install \
-    starship neovim lazygit lazydocker eza bottom pamburus/tap/hl hurl \
-    node pnpm luarocks go zig rust protobuf typos-cli
+    starship neovim lazygit lazydocker \
+    bottom pamburus/tap/hl
+  npm install -g @bitwarden/cli pnpm
 elif [ -x "$(command -v pacman)" ]; then
   sudo pacman -Syu
   sudo pacman -Sy --needed \
     git keychain man-pages man-db \
     zsh zsh-syntax-highlighting starship \
-    bat ripgrep fzf duf bottom hurl \
+    bat ripgrep fzf duf bottom \
     cmake pnpm luarocks go zig rust
-  brew install neovim lazygit lazydocker eza pamburus/tap/hl node protobuf typos-cli
+  brew install neovim lazygit lazydocker eza pamburus/tap/hl node
+  npm install -g @bitwarden/cli
 fi
 
 echo "#####################"
@@ -52,6 +54,7 @@ mkdir -p "$HOME/.config/"
 ln -sfTn "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
 ln -sfTn "$HOME/.dotfiles/lazygit" "$HOME/.config/lazygit"
 ln -sfTn "$HOME/.dotfiles/hl" "$HOME/.config/hl"
+ln -sfT "$HOME/.dotfiles/starship.toml" "$HOME/.config/starship.toml"
 
 if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
   echo "######################"
