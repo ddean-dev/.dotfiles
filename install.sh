@@ -19,7 +19,7 @@ if [ -x "$(command -v apt)" ]; then
     bat ripgrep fzf duf \
     cmake
   brew install \
-    starship neovim lazygit lazydocker eza bottom hurl \
+    starship neovim lazygit lazydocker eza bottom pamburus/tap/hl hurl \
     node pnpm luarocks go zig rust protobuf typos-cli
 elif [ -x "$(command -v pacman)" ]; then
   sudo pacman -Syu
@@ -28,7 +28,7 @@ elif [ -x "$(command -v pacman)" ]; then
     zsh zsh-syntax-highlighting starship \
     bat ripgrep fzf duf bottom hurl \
     cmake pnpm luarocks go zig rust
-  brew install neovim lazygit lazydocker eza node protobuf typos-cli
+  brew install neovim lazygit lazydocker eza pamburus/tap/hl node protobuf typos-cli
 fi
 
 echo "#####################"
@@ -51,6 +51,7 @@ ln -sfT "$HOME/.dotfiles/.tmux.conf" "$HOME/.tmux.conf"
 mkdir -p "$HOME/.config/"
 ln -sfTn "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
 ln -sfTn "$HOME/.dotfiles/lazygit" "$HOME/.config/lazygit"
+ln -sfTn "$HOME/.dotfiles/hl" "$HOME/.config/hl"
 
 if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
   echo "######################"

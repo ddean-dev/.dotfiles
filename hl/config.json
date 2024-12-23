@@ -1,0 +1,4 @@
+{
+  "$schema": "https://raw.githubusercontent.com/pamburus/hl/master/schema/json/config.schema.json",
+  "time-format": "%T"
+}
