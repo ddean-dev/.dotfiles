@@ -17,7 +17,7 @@ if [ -x "$(command -v apt)" ]; then
     git ssh keychain \
     tmux zsh zsh-syntax-highlighting \
     eza bat ripgrep fzf duf \
-    nodejs npm lua luarocks golang rust-all
+    nodejs npm lua5.4 luarocks golang rust-all
   brew install \
     starship neovim lazygit lazydocker \
     bottom pamburus/tap/hl
