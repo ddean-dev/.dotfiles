@@ -5,7 +5,7 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		lazy = false,
 		keys = {
-			{ "<leader>t", "<cmd>Telescope<cr>", desc = "Telescope" },
+			--{ "<leader>t", "<cmd>Telescope<cr>", desc = "Telescope" },
 			{ "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find File" },
 			{ "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
 			{ "<leader>.", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Fuzzy Find" },
@@ -24,7 +24,7 @@ return {
 			{ "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Go to Definition" },
 			{ "gi", "<cmd>Telescope lsp_implementations<cr>", desc = "Go to Implementation" },
 			{ "gr", "<cmd>Telescope lsp_references<cr>", desc = "Go to References" },
-			{ "<leader>s", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Symbols" },
+			{ "<leader>,", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Symbols" },
 			{ "<C-e>", "<cmd>Telescope symbols<cr>", desc = "Emoji🙂", mode = "i" },
 			{ "<leader>q", "<cmd>Telescope quickfix<cr>", { desc = "Code Action" } },
 		},
@@ -85,7 +85,7 @@ return {
 		"benfowler/telescope-luasnip.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim" },
 		keys = {
-			{ "<leader>S", "<cmd>Telescope luasnip<cr>", desc = "Snippets" },
+			{ "<leader>s", "<cmd>Telescope luasnip<cr>", desc = "Snippets" },
 		},
 		config = function()
 			require("telescope").load_extension("luasnip")
