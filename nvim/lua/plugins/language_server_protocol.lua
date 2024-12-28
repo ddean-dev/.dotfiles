@@ -66,7 +66,7 @@ return {
 			})
 			require("mason-lspconfig").setup_handlers({
 				function(server_name)
-					lspserver = require("lspconfig")[server_name]
+					local lspserver = require("lspconfig")[server_name]
 					if lspserver.setup then
 						lspserver.setup({})
 					end
