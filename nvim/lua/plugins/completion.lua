@@ -12,6 +12,7 @@ return {
 		opts = function()
 			vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
 			local cmp = require("cmp")
+			local luasnip = require("luasnip")
 			local defaults = require("cmp.config.default")()
 			return {
 				completion = {
@@ -19,10 +20,9 @@ return {
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-Space>"] = cmp.mapping.complete(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
-					["<S-CR>"] = cmp.mapping.confirm({
-						behavior = cmp.ConfirmBehavior.Replace,
+					["<CR>"] = cmp.mapping.confirm({
 						select = true,
+						behavior = cmp.ConfirmBehavior.Replace,
 					}),
 					["<esc>"] = function(fallback)
 						if cmp.visible() then
@@ -31,13 +31,25 @@ return {
 							fallback()
 						end
 					end,
+					["<Tab>"] = cmp.mapping(function(fallback)
+						if luasnip.locally_jumpable(1) then
+							luasnip.jump(1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
+					["<S-Tab>"] = cmp.mapping(function(fallback)
+						if luasnip.locally_jumpable(-1) then
+							luasnip.jump(-1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "path" },
-				}, {
-					{ name = "buffer" },
 				}),
 				sorting = defaults.sorting,
 				snippet = {
@@ -65,7 +77,21 @@ return {
 	},
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
 	"hrsh7th/cmp-cmdline",
-	"saadparwaiz1/cmp_luasnip",
+	{
+		"danymat/neogen",
+		config = function()
+			require("neogen").setup({ snippet_engine = "luasnip" })
+		end,
+		version = "*",
+		keys = {
+			{
+				"<leader>a",
+				function()
+					require("neogen").generate()
+				end,
+				desc = "Annotate",
+			},
+		},
+	},
 }
