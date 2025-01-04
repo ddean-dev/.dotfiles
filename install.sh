@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -x "$(command -v brew)" ]; then
+if [ ! -x "$(command -v brew)" ] && [ ! -x "$(command -v pacman)" ]; then
   echo "#######################"
   echo "# Installing Homebrew #"
   echo "#######################"
@@ -26,11 +26,10 @@ elif [ -x "$(command -v pacman)" ]; then
   sudo pacman -Syu
   sudo pacman -Sy --needed \
     git keychain man-pages man-db \
-    zsh zsh-syntax-highlighting starship \
-    bat ripgrep fzf duf bottom \
-    cmake pnpm luarocks go zig rust
-  brew install neovim lazygit lazydocker eza pamburus/tap/hl node
-  npm install -g @bitwarden/cli
+    tmux zsh zsh-syntax-highlighting starship \
+    eza bat ripgrep fzf duf bottom hl \
+    cmake nodejs npm luarocks go zig rust \
+    neovim lazygit docker docker-compose bitwarden
 fi
 
 echo "#####################"
