@@ -25,7 +25,14 @@ return {
 			stages = "static",
 		},
 		keys = {
-			{ "<leader>n", "<cmd>Telescope notify<cr>", desc = "Notifications" },
+			{
+				"<leader>n",
+				function()
+					require("notify").dismiss({ silent = true, pending = true })
+					require("telescope").extensions.notify.notify()
+				end,
+				desc = "Notifications",
+			},
 		},
 	},
 	{
@@ -62,7 +69,25 @@ return {
 	},
 	{
 		"karb94/neoscroll.nvim",
-		opts = {},
+		opts = {
+			hide_cursor = false,
+		},
+		keys = {
+			{
+				"<PageUp>",
+				function()
+					require("neoscroll").ctrl_u({ duration = 150, move_cursor = true })
+				end,
+				mode = { "n", "i" },
+			},
+			{
+				"<PageDown>",
+				function()
+					require("neoscroll").ctrl_d({ duration = 150, move_cursor = true })
+				end,
+				mode = { "n", "i" },
+			},
+		},
 	},
 	{
 		"sphamba/smear-cursor.nvim",
