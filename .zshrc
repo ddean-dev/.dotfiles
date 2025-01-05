@@ -19,11 +19,12 @@ fi
 if [ -x "$(command -v tmux)" ]; then
   alias tx="tmux new-session -A -s MAIN"
 fi
-if [ -x "$(command -v fzf)" ]; then
-  source <(fzf --zsh)
-fi
 if [[ $TMUX ]]; then
   alias clear='clear && tmux clear-history'
+fi
+if [ -x "$(command -v fzf)" ]; then
+  export FZF_DEFAULT_OPTS='--tmux center'
+  source <(fzf --zsh)
 fi
 if [ -x "$(command -v keychain)" ]; then
   eval `keychain --eval --quiet --agents ssh`
@@ -55,17 +56,6 @@ fi
 if [ -x "$(command -v btm)" ]; then
   alias top='btm'
 fi
-if [ -x "$(command -v pnpm)" ]; then
-  export PNPM_HOME="$HOME/.local/share/pnpm"
-  case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-  esac
-fi
-if [ -x "$(command -v go)" ]; then
-  export GOPATH=$HOME/go
-  export PATH=$PATH:$GOPATH/bin
-fi
 
 
 # ZSH settings
@@ -77,20 +67,25 @@ SAVEHIST=1000
 echo '\e[5 q'
 
 # Completion Settings
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=** l:|=*'
-zstyle ':completion:*' menu select=1
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' verbose true
 autoload -Uz compinit; compinit
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' verbose true
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=** l:|=*'
+if [ -x "$(command -v fzf)" ]; then
+  source /usr/share/zsh/plugins/fzf-tab/fzf-tab.zsh
+  zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+  zstyle ':fzf-tab:*' popup-min-size 120 40
+  zstyle ':fzf-tab:complete:*:*' fzf-preview '~/.dotfiles/fzf-tab-format.sh ${(Q)realpath}'
+  zstyle ':fzf-tab:complete:*:options' fzf-preview
+  zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
+fi
 
 # Syntax Highlighting
-if [ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+if [ -f "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
   if [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
     source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   fi
 fi
-if [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
+

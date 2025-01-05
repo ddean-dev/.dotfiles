@@ -1,13 +1,5 @@
 #!/bin/bash
 
-if [ ! -x "$(command -v brew)" ] && [ ! -x "$(command -v pacman)" ]; then
-  echo "#######################"
-  echo "# Installing Homebrew #"
-  echo "#######################"
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
 echo "#######################"
 echo "# Installing Packages #"
 echo "#######################"
@@ -18,6 +10,10 @@ if [ -x "$(command -v apt)" ]; then
     tmux zsh zsh-syntax-highlighting \
     eza bat ripgrep fzf duf \
     nodejs npm lua5.4 luarocks golang rust-all
+  if [ ! -x "$(command -v brew)" ] && [ ! -x "$(command -v pacman)" ]; then
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  fi
   brew install \
     starship neovim lazygit lazydocker \
     bottom pamburus/tap/hl
@@ -25,11 +21,20 @@ if [ -x "$(command -v apt)" ]; then
 elif [ -x "$(command -v pacman)" ]; then
   sudo pacman -Syu
   sudo pacman -Sy --needed \
-    git keychain man-pages man-db \
+    git keychain man-pages man-db base-devel \
     tmux zsh zsh-syntax-highlighting starship \
     eza bat ripgrep fzf duf bottom hl \
     cmake nodejs npm luarocks go zig rust \
     neovim lazygit docker docker-compose bitwarden
+  if [ ! -x "$(command -v yay)" ]; then
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    cd ..
+    rm -rf yay
+  fi
+  yay -Syu
+  yay -Sy lazydocker
 fi
 
 echo "#####################"
@@ -40,6 +45,11 @@ if [ ! -d "$HOME/.dotfiles/" ]; then
 fi
 git -C "$HOME/.dotfiles/" fetch
 git -C "$HOME/.dotfiles/" pull
+if [ ! -d "/usr/share/zsh/plugins/fzf-tab" ]; then
+  sudo git clone https://github.com/Aloxaf/fzf-tab.git "/usr/share/zsh/plugins/fzf-tab"
+fi
+sudo git -C "/usr/share/zsh/plugins/fzf-tab" fetch
+sudo git -C "/usr/share/zsh/plugins/fzf-tab" pull
 
 echo "##################################"
 echo "# Symlinking configuration files #"
@@ -54,6 +64,7 @@ ln -sfTn "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
 ln -sfTn "$HOME/.dotfiles/lazygit" "$HOME/.config/lazygit"
 ln -sfTn "$HOME/.dotfiles/hl" "$HOME/.config/hl"
 ln -sfT "$HOME/.dotfiles/starship.toml" "$HOME/.config/starship.toml"
+chmod +x "$HOME/.dotfiles/fzf-tab-format.sh"
 
 if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
   echo "######################"
