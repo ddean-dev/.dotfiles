@@ -22,7 +22,7 @@ elif [ -x "$(command -v pacman)" ]; then
   sudo pacman -Syu
   sudo pacman -Sy --needed \
     git keychain man-pages man-db base-devel \
-    tmux zsh zsh-syntax-highlighting starship \
+    tmux zsh zsh-syntax-highlighting starship clipcat \
     eza bat ripgrep fzf duf bottom hl \
     cmake nodejs npm luarocks go zig rust \
     neovim lazygit docker docker-compose bitwarden
@@ -59,10 +59,12 @@ ln -sfT "$HOME/.dotfiles/.zprofile" "$HOME/.zprofile"
 ln -sfT "$HOME/.dotfiles/.zshenv" "$HOME/.zshenv"
 ln -sfT "$HOME/.dotfiles/.gitconfig" "$HOME/.gitconfig"
 ln -sfT "$HOME/.dotfiles/.tmux.conf" "$HOME/.tmux.conf"
+ln -sfT "$HOME/.dotfiles/.wezterm.lua" "$HOME/.wezterm.lua"
 mkdir -p "$HOME/.config/"
 ln -sfTn "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
 ln -sfTn "$HOME/.dotfiles/lazygit" "$HOME/.config/lazygit"
 ln -sfTn "$HOME/.dotfiles/hl" "$HOME/.config/hl"
+ln -sfTn "$HOME/.dotfiles/clipcat" "$HOME/.config/clipcat"
 ln -sfT "$HOME/.dotfiles/starship.toml" "$HOME/.config/starship.toml"
 chmod +x "$HOME/.dotfiles/fzf-tab-format.sh"
 

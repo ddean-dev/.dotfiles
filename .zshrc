@@ -7,6 +7,8 @@ fi
 bindkey -e
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
 
 # Environment
 alias reload='source $HOME/.zshrc'
