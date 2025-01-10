@@ -21,7 +21,7 @@ if [ -x "$(command -v apt)" ]; then
 elif [ -x "$(command -v pacman)" ]; then
   sudo pacman -Syu
   sudo pacman -Sy --needed \
-    git keychain man-pages man-db base-devel \
+    git keychain man-pages man-db base-devel wl-clipboard \
     tmux zsh zsh-syntax-highlighting starship clipcat \
     eza bat ripgrep fzf duf bottom hl \
     cmake nodejs npm luarocks go zig rust \
