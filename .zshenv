@@ -1,6 +1,6 @@
 if [ -x "$(command -v go)" ]; then
   export GOPATH=$HOME/go
-  export PATH=$GOPATH:$PATH
+  export PATH=$GOPATH/bin:$PATH
 fi
 
 if [ -x "$(command -v pnpm)" ]; then
