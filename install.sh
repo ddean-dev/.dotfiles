@@ -23,7 +23,7 @@ elif [ -x "$(command -v pacman)" ]; then
   sudo pacman -Sy --needed \
     git keychain man-pages man-db base-devel wl-clipboard \
     tmux zsh zsh-syntax-highlighting starship clipcat \
-    eza bat ripgrep fzf duf bottom hl \
+    eza bat ripgrep fzf duf bottom hl jq \
     cmake nodejs npm luarocks go zig rust \
     neovim lazygit docker docker-compose bitwarden
   if [ ! -x "$(command -v yay)" ]; then
@@ -34,7 +34,7 @@ elif [ -x "$(command -v pacman)" ]; then
     rm -rf yay
   fi
   yay -Syu
-  yay -Sy lazydocker
+  yay -Sy --needed lazydocker golangci-lint
 fi
 
 echo "#####################"

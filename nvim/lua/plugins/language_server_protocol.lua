@@ -22,7 +22,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = { "folke/neodev.nvim" },
+		dependencies = { "folke/neodev.nvim", "saghen/blink.cmp" },
 		config = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function()
@@ -55,6 +55,7 @@ return {
 					"cssls", --css
 
 					"gopls", --go
+					"golangci_lint_ls", --go
 					"pyright", --python
 					"ruff", --python
 					"rust_analyzer", --rust
