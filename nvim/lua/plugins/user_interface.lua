@@ -45,7 +45,13 @@ return {
 				plugins = { spelling = true },
 				spec = {
 					{ "<leader>g", group = "Git" },
+					{ "<leader>t", group = "Tab" },
 					{ "<leader>D", group = "Debugger" },
+					{ "<leader>1", hidden = true },
+					{ "<leader>2", hidden = true },
+					{ "<leader>3", hidden = true },
+					{ "<leader>4", hidden = true },
+					{ "<leader>5", hidden = true },
 				},
 			})
 		end,
