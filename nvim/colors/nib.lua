@@ -76,7 +76,7 @@ local theme = {
 	Question = { ctermfg = c.green },
 	Title = { ctermfg = c.magenta },
 	MoreMsg = { ctermfg = c.green },
-	WarningMsg = { ctermfg = c.white, ctermbg = c.brightyellow },
+	WarningMsg = { ctermfg = c.black, ctermbg = c.brightyellow },
 	ErrorMsg = { ctermfg = c.white, ctermbg = c.brightred },
 	WildMenu = { ctermfg = c.black, ctermbg = c.brightblue },
 
