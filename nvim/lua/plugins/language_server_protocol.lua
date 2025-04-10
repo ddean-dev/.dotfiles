@@ -1,19 +1,8 @@
 return {
 	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup({
-				ui = {
-					border = "rounded",
-				},
-			})
-		end,
-	},
-	{
 		"folke/lazydev.nvim",
 		ft = "lua",
 		opts = {
-			---@type boolean|(fun(root:string):boolean?)
 			enabled = function(root_dir)
 				local found = root_dir:find("/.dotfiles")
 				return found ~= nil
@@ -24,27 +13,11 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = { "folke/neodev.nvim", "saghen/blink.cmp" },
 		config = function()
-			vim.api.nvim_create_autocmd("LspAttach", {
-				callback = function()
-					vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
-					vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
-					vim.keymap.set("n", "<leader>q", vim.lsp.buf.code_action, { desc = "Code Action" })
-					vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename" })
-				end,
-			})
-		end,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			local lsp = require("mason-lspconfig")
-			lsp.setup({
-				ensure_installed = {
+			local useDefaults = {
 					"typos_lsp", --spellcheck
 
 					"marksman", --markdown
 					"jsonls", --json
-					"yamlls", --yaml
 					"taplo", --toml
 
 					"bashls", --bash
@@ -62,17 +35,13 @@ return {
 
 					"docker_compose_language_service", --docker
 					"dockerls", --docker
-				},
-				automatic_installation = true,
-			})
-			require("mason-lspconfig").setup_handlers({
-				function(server_name)
+			}
+			for _, server_name in pairs(useDefaults) do
 					local lspserver = require("lspconfig")[server_name]
 					if lspserver.setup then
 						lspserver.setup({})
 					end
-				end,
-			})
+			end
 		end,
 	},
 }
