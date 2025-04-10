@@ -54,8 +54,9 @@ local theme = {
 	-- Status Bar
 	StatusLine = { ctermfg = c.white, ctermbg = "NONE" },
 	StatusLineNC = { ctermfg = c.lightgray, ctermbg = c.darkgray },
-	TabLine = { cterm = { underline = true }, ctermfg = c.black, ctermbg = c.lightgray },
-	TabLineFill = { cterm = { reverse = true } },
+	TabLine = { ctermfg = c.white, ctermbg = c.darkgray },
+	TabLineFill = { ctermfg = c.darkgray, ctermbg = c.black },
+	TabLineSel = { ctermfg = c.black, ctermbg = c.white },
 
 	-- Popup Menus
 	Pmenu = { ctermbg = c.black },
