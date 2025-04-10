@@ -25,7 +25,9 @@ elif [ -x "$(command -v pacman)" ]; then
     tmux zsh zsh-syntax-highlighting starship clipcat \
     eza bat ripgrep fzf duf bottom hl jq \
     cmake nodejs npm luarocks go zig rust \
-    neovim lazygit docker docker-compose bitwarden
+    neovim lazygit docker docker-compose docker-buildx bitwarden \
+    typos-lsp lua-language-server bash-language-server gopls pyright ruff \
+    shfmt stylua
   if [ ! -x "$(command -v yay)" ]; then
     git clone https://aur.archlinux.org/yay.git
     cd yay
@@ -34,7 +36,11 @@ elif [ -x "$(command -v pacman)" ]; then
     rm -rf yay
   fi
   yay -Syu
-  yay -Sy --needed lazydocker golangci-lint
+  yay -Sy --needed lazydocker golangci-lint docker-ls snapd
+  sudo npm i -g typescript eslint eslint_d prettier typescript-language-server vscode-langservers-extracted
+  go install github.com/go-delve/delve/cmd/dlv@latest
+  go install github.com/nametake/golangci-lint-langserver@latest
+  go install github.com/docker/docker-language-server/cmd/docker-language-server@latest
 fi
 
 echo "#####################"

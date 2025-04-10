@@ -58,7 +58,9 @@ fi
 if [ -x "$(command -v btm)" ]; then
   alias top='btm'
 fi
-
+if [ -x "$(command -v docker)" ]; then
+  export COMPOSE_BAKE=true
+fi
 
 # ZSH settings
 HISTFILE=~/.histfile

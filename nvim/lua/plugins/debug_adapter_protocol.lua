@@ -50,26 +50,6 @@ return {
 		end,
 	},
 	{
-		"jay-babu/mason-nvim-dap.nvim",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"mfussenegger/nvim-dap",
-		},
-		config = function()
-			require("mason-nvim-dap").setup({
-				ensure_installed = {
-					"firefox-debug-adapter", --browser
-					"js-debug-adapter", --javascript
-					"codelldb", --rust
-					"debugpy", --python
-					"delve", --go
-				},
-				automatic_installation = true,
-				handlers = {},
-			})
-		end,
-	},
-	{
 		"theHamsta/nvim-dap-virtual-text",
 		config = function()
 			require("nvim-dap-virtual-text").setup({})
@@ -101,6 +81,45 @@ return {
 		},
 		config = function(_, opts)
 			require("dapui").setup(opts)
+		end,
+	},
+	{
+		"nvim-neotest/neotest",
+		dependencies = {
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			{ "fredrikaverpil/neotest-golang", version = "*" },
+		},
+		config = function()
+			require("neotest").setup({
+				adapters = {
+					require("neotest-golang")({}),
+				},
+			})
+		end,
+		keys = {
+			{
+				"<leader>Dt",
+				function()
+					require("neotest").run.run()
+				end,
+				desc = "Run Test",
+			},
+			{
+				"<leader>DT",
+				function()
+					require("neotest").run.run({ strategy = "dap" })
+				end,
+				desc = "Debug Test",
+			},
+		},
+	},
+	{
+		"leoluz/nvim-dap-go",
+		config = function()
+			require("dap-go").setup()
 		end,
 	},
 }

@@ -1,5 +1,4 @@
 return {
-	"williamboman/mason.nvim",
 	{
 		"stevearc/conform.nvim",
 		config = function()
@@ -14,7 +13,7 @@ return {
 					css = { "prettier" },
 					json = { "prettier" },
 					yaml = { "prettier" },
-					go = { "goimports", "gofmt" },
+					go = { "golangci-lint" },
 					shell = { "shfmt" },
 					proto = { "buf" },
 				},
@@ -28,12 +27,6 @@ return {
 				})
 				vim.cmd.up()
 			end, { desc = "Save file" })
-		end,
-	},
-	{
-		"zapling/mason-conform.nvim",
-		config = function()
-			require("mason-conform").setup()
 		end,
 	},
 }

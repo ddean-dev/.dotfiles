@@ -22,7 +22,7 @@ return {
 			{ "gD", "<cmd>Telescope lsp_declarations<cr>", desc = "Go to Declaration" },
 			{ "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Go to Definition" },
 			{ "gi", "<cmd>Telescope lsp_implementations<cr>", desc = "Go to Implementation" },
-			{ "gr", "<cmd>Telescope lsp_references<cr>", desc = "Go to References" },
+			{ "grr", "<cmd>Telescope lsp_references<cr>", desc = "Go to References" },
 			{ "<leader>,", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Symbols" },
 			{ "<C-e>", "<cmd>Telescope symbols<cr>", desc = "Emoji🙂", mode = "i" },
 			{ "<leader>q", "<cmd>Telescope quickfix<cr>", { desc = "Code Action" } },
