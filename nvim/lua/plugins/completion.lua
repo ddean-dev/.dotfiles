@@ -41,10 +41,17 @@ return {
 				menu = { auto_show = false },
 				documentation = { auto_show = true, auto_show_delay_ms = 500 },
 				trigger = { show_on_trigger_character = true },
+				ghost_text = { enabled = false },
 			},
 			sources = {
-				--default = { "lsp", "path", "snippets", "buffer" },
 				default = { "lsp", "path", "snippets" },
+			},
+			cmdline = {
+				completion = {
+					ghost_text = {
+						enabled = false,
+					},
+				},
 			},
 			snippets = { preset = "luasnip" },
 			signature = { enabled = true },
