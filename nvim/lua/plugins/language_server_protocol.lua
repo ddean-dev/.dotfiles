@@ -42,6 +42,15 @@ return {
 					lspserver.setup({})
 				end
 			end
+			vim.diagnostic.config({
+				virtual_lines = {
+					current_line = true,
+				},
+				float = {
+					scope = "cursor",
+				},
+				underline = true,
+			})
 		end,
 	},
 }
