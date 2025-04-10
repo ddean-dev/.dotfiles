@@ -35,8 +35,9 @@ elif [ -x "$(command -v pacman)" ]; then
     cd ..
     rm -rf yay
   fi
-  yay -Syu
-  yay -Sy --needed lazydocker golangci-lint docker-ls snapd
+  yay -Syu --answerclean=NotInstalled --answerdiff=None
+  yay -Sy --needed --answerclean=NotInstalled --answerdiff=None \
+    lazydocker golangci-lint docker-ls snapd
   sudo npm i -g typescript eslint eslint_d prettier typescript-language-server vscode-langservers-extracted
   go install github.com/go-delve/delve/cmd/dlv@latest
   go install github.com/nametake/golangci-lint-langserver@latest
@@ -73,6 +74,13 @@ ln -sfTn "$HOME/.dotfiles/hl" "$HOME/.config/hl"
 ln -sfTn "$HOME/.dotfiles/clipcat" "$HOME/.config/clipcat"
 ln -sfT "$HOME/.dotfiles/starship.toml" "$HOME/.config/starship.toml"
 chmod +x "$HOME/.dotfiles/fzf-tab-format.sh"
+
+echo "#####################"
+echo "# Enabling Services #"
+echo "#####################"
+systemctl --user daemon-reload
+systemctl --user enable "$HOME/.config/clipcat/clipcat.service"
+systemctl --user start clipcat.service
 
 if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
   echo "######################"
