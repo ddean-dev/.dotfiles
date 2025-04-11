@@ -21,3 +21,7 @@ if [ -x "$(command -v nvim)" ]; then
   export EDITOR=nvim
   export MANPAGER='nvim +Man!'
 fi
+
+if [ -x "$(command -v docker)" ]; then
+  export COMPOSE_BAKE=true
+fi

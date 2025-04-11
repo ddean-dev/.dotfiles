@@ -40,8 +40,6 @@ if [ -x "$(command -v eza)" ]; then
 fi
 if [ -x "$(command -v nvim)" ]; then
   alias vim='nvim'
-  export EDITOR=nvim
-  export MANPAGER='nvim +Man!'
 fi
 if [ -x "$(command -v lazygit)" ]; then
   alias lg='lazygit'
@@ -57,9 +55,6 @@ if [ -x "$(command -v duf)" ]; then
 fi
 if [ -x "$(command -v btm)" ]; then
   alias top='btm'
-fi
-if [ -x "$(command -v docker)" ]; then
-  export COMPOSE_BAKE=true
 fi
 
 # ZSH settings
