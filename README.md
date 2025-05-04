@@ -1,6 +1,6 @@
 # Dotfiles
 
-My terminal config files and setup scripts. Currently being used on Debian in WSL2 and SteamOS on steamdeck
+My terminal config files and setup scripts. Currently being used on Arch, Arch in WSL2, and SteamOS on SteamDeck(a.k.a. Weird Arch)
 
 ## Installation
 ```sh
