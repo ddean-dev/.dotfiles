@@ -2,29 +2,27 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
 		lazy = false,
 		keys = {
-			--{ "<leader>t", "<cmd>Telescope<cr>", desc = "Telescope" },
 			{ "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find File" },
 			{ "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
 			{ "<leader>.", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Fuzzy Find" },
 			{ "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
 			{ "<leader>j", "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
-			{ "'", "<cmd>Telescope marks<cr>", desc = "Marks" },
-			{ "<leader>h", "<cmd>Telescope help_tags<cr>", desc = "Help Search" },
-			{ "<leader>m", "<cmd>Telescope man_pages<cr>", desc = "Manual Pages" },
+			{ "<leader>m", "<cmd>Telescope marks<cr>", desc = "Marks" },
+			-- { "<leader>h", "<cmd>Telescope help_tags<cr>", desc = "Help Search" },
+			-- { "<leader>m", "<cmd>Telescope man_pages<cr>", desc = "Manual Pages" },
 			{ "<leader>d", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Diagnostics" },
 			{ "<leader>gh", "<cmd>Telescope git_bcommits<cr>", desc = "History" },
 			{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Commits" },
 			{ "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Branches" },
 			{ "<leader>c", "<cmd>Telescope git_status<cr>", desc = "Git Changes" },
-			{ "gD", "<cmd>Telescope lsp_declarations<cr>", desc = "Go to Declaration" },
-			{ "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Go to Definition" },
-			{ "gi", "<cmd>Telescope lsp_implementations<cr>", desc = "Go to Implementation" },
+			{ "grD", "<cmd>Telescope lsp_declarations<cr>", desc = "Go to Declaration" },
+			{ "grd", "<cmd>Telescope lsp_definitions<cr>", desc = "Go to Definition" },
+			{ "gri", "<cmd>Telescope lsp_implementations<cr>", desc = "Go to Implementation" },
 			{ "grr", "<cmd>Telescope lsp_references<cr>", desc = "Go to References" },
-			{ "<leader>,", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Symbols" },
-			{ "<C-e>", "<cmd>Telescope symbols<cr>", desc = "Emoji🙂", mode = "i" },
+			{ "gO", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Symbols" },
 			{ "<leader>q", "<cmd>Telescope quickfix<cr>", { desc = "Code Action" } },
 		},
 		opts = {
@@ -32,9 +30,6 @@ return {
 				wrap_results = true,
 			},
 			pickers = {
-				symbols = {
-					sources = { "emoji", "nerd" },
-				},
 				find_files = {
 					find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
 				},
@@ -90,5 +85,15 @@ return {
 			require("telescope").load_extension("luasnip")
 			local lst = require("telescope").extensions.luasnip
 		end,
+	},
+	{
+		"junegunn/fzf",
+	},
+	{
+		"junegunn/fzf.vim",
+		keys = {
+			-- { "<leader><space>", "<cmd>Files<cr>", desc = "Find File" },
+			-- { "<leader>/", "<cmd>Rg<cr>", desc = "Live Grep" },
+		},
 	},
 }
