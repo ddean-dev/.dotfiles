@@ -36,7 +36,7 @@ elif [ -x "$(command -v pacman)" ]; then
     rm -rf yay
   fi
   yay -Syu --answerclean=NotInstalled --answerdiff=None
-  yay -Sy --needed --answerclean=NotInstalled --answerdiff=None \
+  yay -Sy --needed --answerclean=None --answerdiff=None \
     lazydocker golangci-lint docker-ls snapd
   sudo npm i -g typescript eslint eslint_d prettier typescript-language-server vscode-langservers-extracted
   go install github.com/go-delve/delve/cmd/dlv@latest
@@ -87,7 +87,7 @@ if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
   echo "# Generating SSH Key #"
   echo "######################"
   ssh-keygen -t ed25519 -C "david@ddean.dev"
-  eval $(keychain --eval --quiet --agents ssh)
+  eval $(keychain --eval --quiet)
   ssh-add ~/.ssh/id_ed25519
 fi
 

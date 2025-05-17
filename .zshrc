@@ -29,7 +29,7 @@ if [ -x "$(command -v fzf)" ]; then
   source <(fzf --zsh)
 fi
 if [ -x "$(command -v keychain)" ]; then
-  eval `keychain --eval --quiet --agents ssh`
+  eval `keychain --eval --quiet`
   if ! ssh-add -l > /dev/null ; then
     ssh-add -q ~/.ssh/id_ed25519
   fi
