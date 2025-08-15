@@ -12,5 +12,7 @@
   rebase = true
 [diff]
   algorithm = histogram
+[remote.origin]
+  prune = true
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/
