@@ -53,4 +53,15 @@ return {
 			})
 		end,
 	},
+	{
+		"elixir-tools/elixir-tools.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("elixir").setup({
+				nextls = { enable = true },
+				elixirls = { enable = true },
+				projectionist = { enable = true },
+			})
+		end,
+	},
 }
