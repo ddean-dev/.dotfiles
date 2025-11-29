@@ -3,6 +3,10 @@ if [ -x "$(command -v go)" ]; then
   export PATH=$GOPATH/bin:$PATH
 fi
 
+if [ -x "$(command -v cargo)" ]; then
+  export PATH=$HOME/.cargo/bin:$PATH
+fi
+
 if [ -x "$(command -v pnpm)" ]; then
   export PNPM_HOME="$HOME/.local/share/pnpm"
   case ":$PATH:" in
