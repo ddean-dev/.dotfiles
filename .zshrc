@@ -56,6 +56,9 @@ fi
 if [ -x "$(command -v btm)" ]; then
   alias top='btm'
 fi
+if [ -x "$(command -v go)" ]; then
+  alias gooutdated="go list -f '{{if not .Indirect}}{{if .Update}}{{.}}{{end}}{{end}}' -u -m all | column -t"
+fi
 
 # ZSH settings
 HISTFILE=~/.histfile
