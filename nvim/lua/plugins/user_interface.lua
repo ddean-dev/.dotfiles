@@ -74,28 +74,6 @@ return {
 		end,
 	},
 	{
-		"karb94/neoscroll.nvim",
-		opts = {
-			hide_cursor = false,
-		},
-		keys = {
-			{
-				"<PageUp>",
-				function()
-					require("neoscroll").ctrl_u({ duration = 150, move_cursor = true })
-				end,
-				mode = { "n", "i" },
-			},
-			{
-				"<PageDown>",
-				function()
-					require("neoscroll").ctrl_d({ duration = 150, move_cursor = true })
-				end,
-				mode = { "n", "i" },
-			},
-		},
-	},
-	{
 		"sphamba/smear-cursor.nvim",
 		opts = {},
 	},
