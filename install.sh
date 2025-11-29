@@ -9,7 +9,6 @@ sudo pacman -Sy --needed \
   tmux zsh zsh-syntax-highlighting starship \
   eza bat ripgrep fzf duf bottom hl jq \
   cmake nodejs npm luarocks go zig rust \
-  elixir erlang erlang-asn1 erlang-public_key erlang-ssl erlang-parsetools erlang-xmerl inotify-tools \
   neovim lazygit docker docker-compose docker-buildx bitwarden \
   marksman typos-lsp lua-language-server bash-language-server gopls pyright ruff \
   shfmt stylua
@@ -20,13 +19,14 @@ if [ ! -x "$(command -v yay)" ]; then
   cd ..
   rm -rf yay
 fi
-yay -Syu --answerclean=NotInstalled --answerdiff=None
-yay -Sy --needed --answerclean=None --answerdiff=None \
-  lazydocker golangci-lint docker-ls snapd elixir-ls
+yay -Syu --answerclean=NotInstalled --answerdiff=None --answeredit=None
+yay -Sy --needed --answerclean=None --answerdiff=None --answeredit=None \
+  lazydocker golangci-lint docker-ls
 sudo npm i -g typescript eslint eslint_d prettier typescript-language-server vscode-langservers-extracted
 go install github.com/go-delve/delve/cmd/dlv@latest
-go install github.com/nametake/golangci-lint-langserver@latest
+go install github.com/nametake/golangci-lint-langserver@v0.0.11
 go install github.com/docker/docker-language-server/cmd/docker-language-server@latest
+cargo install sqruff
 
 echo "#####################"
 echo "# Updating Dotfiles #"
