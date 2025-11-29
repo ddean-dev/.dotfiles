@@ -16,6 +16,7 @@ return {
 					go = { "golangci-lint" },
 					shell = { "shfmt" },
 					proto = { "buf" },
+					sql = { "sqruff" },
 				},
 			})
 			vim.keymap.set({ "i", "x", "n", "s" }, "<M-s>", "<cmd>up<cr><esc>", { desc = "Save file" })
