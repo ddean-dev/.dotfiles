@@ -8,7 +8,7 @@ sudo pacman -Sy --needed \
   git keychain man-pages man-db base-devel wl-clipboard cliphist \
   tmux zsh zsh-syntax-highlighting starship \
   eza bat ripgrep fzf duf bottom hl jq \
-  cmake nodejs npm luarocks go zig rust \
+  cmake nodejs npm pnpm luarocks go zig rust \
   neovim lazygit docker docker-compose docker-buildx bitwarden \
   marksman typos-lsp lua-language-server bash-language-server gopls pyright ruff \
   shfmt stylua
