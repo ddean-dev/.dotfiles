@@ -12,7 +12,7 @@ return {
 			{
 				"<leader><space>",
 				function()
-					require("fzf-lua").global()
+					require("fzf-lua").files()
 				end,
 				desc = "Find File",
 			},
