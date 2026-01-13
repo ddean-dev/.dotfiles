@@ -56,18 +56,6 @@ return {
 		end,
 	},
 	{
-		"nvim-telescope/telescope-dap.nvim",
-		dependencies = "nvim-telescope/telescope.nvim",
-		keys = {
-			{ "<leader>Db", "<cmd>Telescope dap list_breakpoints<cr>", desc = "Breakpoints" },
-			{ "<leader>Df", "<cmd>Telescope dap frames<cr>", desc = "Frames" },
-			{ "<leader>Dv", "<cmd>Telescope dap variables<cr>", desc = "Variables" },
-		},
-		config = function()
-			require("telescope").load_extension("dap")
-		end,
-	},
-	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 		keys = {

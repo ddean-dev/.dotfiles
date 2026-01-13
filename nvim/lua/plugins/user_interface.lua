@@ -1,6 +1,7 @@
 return {
 	{
 		"folke/noice.nvim",
+		dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
 		event = "VeryLazy",
 		opts = {
 			lsp = {
@@ -16,7 +17,6 @@ return {
 				lsp_doc_border = true,
 			},
 		},
-		dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
 	},
 	{ "stevearc/dressing.nvim" },
 	{
@@ -28,8 +28,42 @@ return {
 			{
 				"<leader>n",
 				function()
+					local colors = {
+						[vim.log.levels.ERROR] = "NotifyERRORTitle",
+						["ERROR"] = "NotifyERRORTitle",
+						[vim.log.levels.WARN] = "NotifyWARNTitle",
+						["WARN"] = "NotifyWARNTitle",
+						[vim.log.levels.INFO] = "NotifyINFOTitle",
+						["INFO"] = "NotifyINFOTitle",
+						[vim.log.levels.DEBUG] = "NotifyDEBUGTitle",
+						["DEBUG"] = "NotifyDEBUGTitle",
+						[vim.log.levels.TRACE] = "NotifyTRACETitle",
+						["TRACE"] = "NotifyTRACETitle",
+					}
 					require("notify").dismiss({ silent = true, pending = true })
-					require("telescope").extensions.notify.notify()
+					require("fzf-lua").fzf_exec(function(next)
+						local hist = require("notify").history()
+						for i = #hist, 1, -1 do
+							local notif = hist[i]
+							local msg = notif.icon
+							for _, value in ipairs(notif.title) do
+								msg = msg .. " " .. value
+							end
+							for _, value in ipairs(notif.message) do
+								msg = msg .. "\n" .. value
+							end
+							msg = require("fzf-lua").utils.ansi_from_hl(colors[notif.level], msg)
+							next(msg)
+						end
+						next()
+					end, {
+						color_icons = true,
+						fzf_opts = {
+							["--read0"] = "",
+							["--gap"] = "",
+							["--wrap"] = "",
+						},
+					})
 				end,
 				desc = "Notifications",
 			},

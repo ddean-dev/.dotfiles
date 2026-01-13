@@ -36,7 +36,7 @@ return {
 						{
 							"branch",
 							on_click = function()
-								require("telescope.builtin").git_branches()
+								require("fzf-lua").git_branches()
 							end,
 						},
 						"diff",

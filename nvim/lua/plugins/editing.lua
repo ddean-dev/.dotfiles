@@ -3,16 +3,15 @@ return {
 		"gbprod/yanky.nvim",
 		dependencies = {
 			{ "kkharji/sqlite.lua" },
+			{ "ibhagwan/fzf-lua" },
 		},
 		opts = {
 			ring = { storage = "sqlite" },
 		},
 		keys = {
 			{
-				"<C-v>",
-				function()
-					require("telescope").extensions.yank_history.yank_history({})
-				end,
+				"<leader>p",
+				"<cmd>YankyRingHistory<cr>",
 				desc = "Clipboard",
 				mode = { "n", "i" },
 			},
@@ -34,8 +33,6 @@ return {
 				desc = "Put yanked text before cursor",
 				mode = { "n", "x" },
 			},
-			{ "<c-p>", "<Plug>(YankyPreviousEntry)", desc = "Select previous entry through yank history" },
-			{ "<c-n>", "<Plug>(YankyNextEntry)", desc = "Select next entry through yank history" },
 		},
 	},
 }

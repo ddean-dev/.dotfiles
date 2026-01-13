@@ -7,7 +7,7 @@ sudo pacman -Syu
 sudo pacman -Sy --needed \
   git keychain man-pages man-db base-devel wl-clipboard cliphist \
   tmux zsh zsh-syntax-highlighting starship \
-  eza bat ripgrep fzf duf bottom hl jq \
+  eza bat ripgrep fzf duf bottom hl jq yazi \
   cmake nodejs npm pnpm luarocks go zig rust \
   neovim lazygit docker docker-compose docker-buildx bitwarden \
   marksman typos-lsp lua-language-server bash-language-server gopls pyright ruff \
@@ -24,7 +24,7 @@ yay -Sy --needed --answerclean=None --answerdiff=None --answeredit=None \
   lazydocker golangci-lint docker-ls
 sudo npm i -g typescript eslint eslint_d prettier typescript-language-server vscode-langservers-extracted
 go install github.com/go-delve/delve/cmd/dlv@latest
-go install github.com/nametake/golangci-lint-langserver@v0.0.11
+go install github.com/nametake/golangci-lint-langserver@latest
 go install github.com/docker/docker-language-server/cmd/docker-language-server@latest
 cargo install sqruff
 
