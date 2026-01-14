@@ -6,6 +6,7 @@ return {
 			vim.o.showtabline = 2
 			vim.api.nvim_set_keymap("n", "<leader>tn", ":$tabnew<CR>", { noremap = true, desc = "New Tab" })
 			vim.api.nvim_set_keymap("n", "<leader>tq", ":tabclose<CR>", { noremap = true, desc = "Close Tab" })
+			vim.api.nvim_set_keymap("n", "<leader>ts", ":wincmd T<CR>", { noremap = true, desc = "Split Tab" })
 			vim.api.nvim_set_keymap("n", "<leader>t[", ":-tabmove<CR>", { noremap = true, desc = "Move Prev" })
 			vim.api.nvim_set_keymap("n", "<leader>t]", ":+tabmove<CR>", { noremap = true, desc = "Move Next" })
 			vim.api.nvim_set_keymap("n", "<leader>1", "1gt", { noremap = true })
