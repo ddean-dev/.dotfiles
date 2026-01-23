@@ -23,7 +23,16 @@ return {
 			})
 		end,
 		keys = {
-			{ "<leader>f", "<cmd>Oil --float<cr>", desc = "File Manager" },
+			{
+				"<leader>f",
+				function()
+					local oil = require("oil")
+					oil.open_float(nil, nil, function()
+						oil.open_preview()
+					end)
+				end,
+				desc = "File Manager",
+			},
 		},
 	},
 }

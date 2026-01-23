@@ -13,7 +13,7 @@ return {
 				"<leader>p",
 				"<cmd>YankyRingHistory<cr>",
 				desc = "Clipboard",
-				mode = { "n", "i" },
+				mode = { "n" },
 			},
 			{
 				"y",
