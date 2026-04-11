@@ -37,13 +37,6 @@ return {
 				end,
 				desc = "Step Out",
 			},
-			{
-				"<leader>Do",
-				function()
-					require("dap").repl.toggle()
-				end,
-				desc = "Open REPL",
-			},
 		},
 		config = function()
 			vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint" })
@@ -55,21 +48,19 @@ return {
 			require("nvim-dap-virtual-text").setup({})
 		end,
 	},
+	-- {
+	-- 	"rcarriga/nvim-dap-ui",
+	-- 	dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+	-- 	config = function(_, opts)
+	-- 		require("dapui").setup(opts)
+	-- 	end,
+	-- },
 	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+		"igorlfs/nvim-dap-view",
+		opts = {},
 		keys = {
-			{
-				"<leader>DD",
-				function()
-					require("dapui").toggle({})
-				end,
-				desc = "Dap UI",
-			},
+			{ "<leader>DD", "<cmd>DapViewToggle<cr>", desc = "Dap UI" },
 		},
-		config = function(_, opts)
-			require("dapui").setup(opts)
-		end,
 	},
 	{
 		"nvim-neotest/neotest",
@@ -77,7 +68,6 @@ return {
 			"nvim-neotest/nvim-nio",
 			"nvim-lua/plenary.nvim",
 			"antoinemadec/FixCursorHold.nvim",
-			"nvim-treesitter/nvim-treesitter",
 			{ "fredrikaverpil/neotest-golang", version = "*" },
 		},
 		config = function()

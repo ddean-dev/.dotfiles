@@ -101,13 +101,6 @@ return {
 				end,
 				desc = "Diagnostics",
 			},
-			-- {
-			-- 	"<leader>q",
-			-- 	function()
-			-- 		require("fzf-lua").lsp_code_actions()
-			-- 	end,
-			-- 	{ desc = "Code Action" },
-			-- },
 			{
 				"<leader>u",
 				function()

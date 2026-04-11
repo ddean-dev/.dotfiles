@@ -143,11 +143,6 @@ local theme = {
 	GitSignsChangeInline = { ctermbg = c.yellow },
 	GitSignsDeleteInline = { ctermbg = c.red },
 
-	-- TreeSitterContext (https://github.com/nvim-treesitter/nvim-treesitter-context)
-	TreesitterContext = { cterm = { italic = true } },
-	TreesitterContextLineNumber = { cterm = { italic = true } },
-	TreesitterContextSeparator = { ctermfg = c.darkgray },
-
 	-- DAP
 	DapBreakpoint = { ctermfg = c.brightred },
 	DapLogpoint = { ctermfg = c.brightyellow },

@@ -37,7 +37,7 @@ return {
 				"dockerls", --docker
 			}
 			for _, server_name in pairs(useDefaults) do
-				local lspserver = require("lspconfig")[server_name]
+				local lspserver = vim.lsp.config[server_name]
 				if lspserver.setup then
 					lspserver.setup({})
 				end

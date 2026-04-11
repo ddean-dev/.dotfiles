@@ -5,7 +5,7 @@ return {
 			require("gitsigns").setup({
 				signcolumn = true,
 				numhl = false,
-				signs_staged_enabled = true,
+				-- signs_staged_enabled = true,
 				word_diff = false,
 				current_line_blame = true,
 				current_line_blame_opts = {
