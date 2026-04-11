@@ -37,10 +37,7 @@ return {
 				"dockerls", --docker
 			}
 			for _, server_name in pairs(useDefaults) do
-				local lspserver = vim.lsp.config[server_name]
-				if lspserver.setup then
-					lspserver.setup({})
-				end
+				vim.lsp.enable(server_name)
 			end
 			vim.diagnostic.config({
 				virtual_lines = {
