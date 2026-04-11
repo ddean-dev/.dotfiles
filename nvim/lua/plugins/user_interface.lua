@@ -91,23 +91,6 @@ return {
 		end,
 	},
 	{
-		"MeanderingProgrammer/markdown.nvim",
-		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("render-markdown").setup({
-				heading = {
-					backgrounds = {
-						"Folded",
-					},
-					icons = { "󰠶 " },
-				},
-				code = {
-					style = "language",
-				},
-			})
-		end,
-	},
-	{
 		"sphamba/smear-cursor.nvim",
 		opts = {},
 	},
