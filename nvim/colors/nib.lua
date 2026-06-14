@@ -150,6 +150,14 @@ local theme = {
 	--WhichKey (https://github.com/folke/which-key.nvim)
 	WhichKeyBorder = { ctermfg = c.blue },
 	WhichKeyNormal = { ctermfg = c.lightgray },
+
+	-- [Render Markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+	RenderMarkdownH1Bg = { ctermfg = c.black, ctermbg = c.blue },
+	RenderMarkdownH2Bg = { ctermfg = c.black, ctermbg = c.cyan },
+	RenderMarkdownH3Bg = { ctermfg = c.black, ctermbg = c.green },
+	RenderMarkdownH4Bg = { ctermfg = c.black, ctermbg = c.yellow },
+	RenderMarkdownH5Bg = { ctermfg = c.black, ctermbg = c.red },
+	RenderMarkdownH6Bg = { ctermfg = c.black, ctermbg = c.magenta },
 }
 
 for group, colors in pairs(theme) do
