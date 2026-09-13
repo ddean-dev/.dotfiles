@@ -15,17 +15,11 @@ if [ -x "$(command -v pnpm)" ]; then
   esac
 fi
 
-if [ -s "$HOME/.bun/_bun" ]; then
-  source "$HOME/.bun/_bun"
-  export BUN_INSTALL="$HOME/.bun"
-  export PATH="$BUN_INSTALL/bin:$PATH"
-fi
-
 if [ -x "$(command -v nvim)" ]; then
   export EDITOR=nvim
   export MANPAGER='nvim +Man!'
 fi
 
-if [ -x "$(command -v docker)" ]; then
-  export COMPOSE_BAKE=true
+if [ -x "$(command -v podman)" ]; then
+  export DOCKER_HOST=unix://$(podman info --format '{{.Host.RemoteSocket.Path}}')
 fi

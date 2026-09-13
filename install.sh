@@ -10,7 +10,7 @@ sudo pacman -Sy --needed \
   tmux zsh zsh-syntax-highlighting starship \
   eza bat ripgrep fzf duf bottom hl jq \
   cmake nodejs npm pnpm luarocks go zig rust \
-  neovim lazygit docker docker-compose docker-buildx lazydocker \
+  neovim lazygit podman docker-compose lazydocker \
   marksman typos-lsp lua-language-server bash-language-server gopls golangci-lint pyright ruff \
   shfmt stylua
 pnpm i -g \
