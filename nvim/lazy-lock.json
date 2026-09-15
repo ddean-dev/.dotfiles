@@ -5,7 +5,6 @@
   "blink.cmp": { "branch": "main", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
   "conform.nvim": { "branch": "master", "commit": "016802de402556da54c36bd7359b441266b01cdd" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
-  "elixir-tools.nvim": { "branch": "main", "commit": "defb94618c8cd7a8de5943bf09b25ec055263c19" },
   "friendly-snippets": { "branch": "main", "commit": "b4d01b0fdf3c9a549961c2f9ffe8dc09be166219" },
   "fzf": { "branch": "master", "commit": "b1be3a8be1b833ce5b92fbbac11637643d60a046" },
   "fzf-lua": { "branch": "main", "commit": "05e44d38de0a79c11fba5f7bf8138791b1dbdd1e" },
@@ -39,6 +38,7 @@
   "sqlite.lua": { "branch": "master", "commit": "50092d60feb242602d7578398c6eb53b4a8ffe7b" },
   "tabby.nvim": { "branch": "main", "commit": "3c130e1fcb598ce39a9c292847e32d7c3987cf11" },
   "tmux.nvim": { "branch": "main", "commit": "32ceaf2793582955ef9576809730878c4d2d9426" },
+  "treewalker.nvim": { "branch": "main", "commit": "976eb9921c2f26a9a4314b5a0f4842d447a49592" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
   "yanky.nvim": { "branch": "main", "commit": "dd6689fdda85f66cab7d9b1a1664625f3be0920d" }
 }
